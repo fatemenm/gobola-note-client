@@ -21,7 +21,11 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 0.8em;
+  padding: 0.6em;
+}
+
+#header {
+  box-shadow: 0 0 6px 3px #bcbcbc;
 }
 
 .l-nav {
@@ -35,24 +39,26 @@ body {
 .l-flex {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  gap: 0.5em;
   align-items: center;
-  gap: 1em;
   padding: 0 0.8em;
-}
-
-header {
-  border-bottom: 0.1px solid rgb(221, 220, 220);
 }
 
 menu {
   list-style: none;
 }
 
+.search-bar {
+  border-radius: 10px;
+  background-color: #f1f3f4;
+  height: 3em;
+  width: 44em;
+}
+
 input[type=search] {
   height: 2em;
   background-color: #f1f3f4;
-  border: 0.1px solid gray;
+  border: none;
 }
 
 input[type=search]::-moz-placeholder {
@@ -67,31 +73,43 @@ input[type=search]::placeholder {
   font-style: 400;
 }
 
-.button {
-  border-radius: 50%;
+button {
   border: none;
   background-color: transparent;
   cursor: pointer;
-  border: 1px solid red;
 }
 
-.button > .icon {
+.circle-button {
+  padding: 0.7em 0.8em;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.circle-button.search-button {
+  padding: 0.45em 0.6em;
+}
+
+.circle-button:hover {
+  background-color: #f1f1f2;
+}
+.circle-button:hover > .icon {
   color: #5f6368;
 }
 
-.button:hover {
+.circle-button.profile-button {
+  padding: 0.3em 0.4em;
+}
+
+.search-button:hover {
   background-color: #e4e6e8;
 }
 
-.search-bar {
-  border-radius: 10px;
-  background-color: #f1f3f4;
-  height: 3em;
+.icon {
+  cursor: pointer;
+  color: #797979;
 }
 
 .image-profile {
-  height: 100%;
-  width: 100%;
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
