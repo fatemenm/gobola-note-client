@@ -32,12 +32,14 @@ body {
 
 .l-nav {
   grid-area: nav;
-  background-color: lightblue;
+  background-color: rgb(231, 240, 243);
 }
 
 .l-main {
   grid-area: main;
-  background-color: lightpink;
+  display: flex;
+  flex-direction: column;
+  padding: 3% 25%;
 }
 .l-flex {
   display: flex;
@@ -75,11 +77,14 @@ menu {
   gap: 0.6em;
 }
 
+input {
+  border: none;
+  font-family: "Roboto", sans-serif;
+}
+
 input[type="search"] {
   height: 2em;
   background-color: #f1f3f4;
-  border: none;
-  font-family: "Roboto", sans-serif;
 }
 
 input[type="search"]::placeholder {
@@ -126,4 +131,26 @@ button {
 .profile-image {
   border-radius: 50%;
   object-fit: cover;
+}
+
+.l-new-note-shortcuts {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0.3px 0 3px 1px rgb(230, 230, 230);
+  border: 1px solid rgb(222, 222, 222);
+  border-top-width: 0.1px;
+  justify-content: space-between;
+  padding: 0 1em;
+}
+
+.new-note-input {
+  height: 100%;
+  border-radius: 8px 0 0 8px;
+  font-size: 1em;
+  font-weight: 400;
+  flex-grow: 2;
+}
+
+.new-note-input::placeholder {
+  color: #565656;
 }
