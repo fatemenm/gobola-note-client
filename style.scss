@@ -16,7 +16,7 @@ body {
     "header header header header"
     "nav main main main";
 }
-// seprate #header and .l-header
+
 .l-header {
   grid-area: header;
   display: flex;
@@ -32,10 +32,12 @@ body {
 
 .l-nav {
   grid-area: nav;
+  background-color: lightblue;
 }
 
 .l-main {
   grid-area: main;
+  background-color: lightpink;
 }
 .l-flex {
   display: flex;
@@ -81,7 +83,6 @@ input[type="search"] {
 }
 
 input[type="search"]::placeholder {
-  // color: #808080;
   font-size: 1.3em;
   font-style: 400;
 }
@@ -122,7 +123,7 @@ button {
   color: #797979;
 }
 
-.image-profile {
+.profile-image {
   border-radius: 50%;
   object-fit: cover;
 }

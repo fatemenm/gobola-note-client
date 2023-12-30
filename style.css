@@ -30,10 +30,12 @@ body {
 
 .l-nav {
   grid-area: nav;
+  background-color: lightblue;
 }
 
 .l-main {
   grid-area: main;
+  background-color: lightpink;
 }
 
 .l-flex {
@@ -125,7 +127,7 @@ button {
   color: #797979;
 }
 
-.image-profile {
+.profile-image {
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
