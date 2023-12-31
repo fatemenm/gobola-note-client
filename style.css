@@ -30,13 +30,14 @@ body {
 
 .l-nav {
   grid-area: nav;
-  background-color: rgb(231, 240, 243);
+  background-color: rgb(238, 240, 240);
 }
 
 .l-main {
   grid-area: main;
   display: flex;
   flex-direction: column;
+  gap: 2em;
   padding: 3% 25%;
 }
 
@@ -140,11 +141,13 @@ button {
 
 .l-new-note-shortcuts {
   background-color: white;
-  border-radius: 8px;
-  box-shadow: 0.3px 0 3px 1px rgb(230, 230, 230);
-  border: 1px solid rgb(222, 222, 222);
-  border-top-width: 0.1px;
+  border-radius: 9px;
+  box-shadow: 0.4px 0.4px 3px 1px rgb(230, 230, 230);
+  border-style: solid;
+  border-color: #dfdfdf;
+  border-width: 0.1em 0.15em 0.15em;
   justify-content: space-between;
+  align-items: center;
   padding: 0 1em;
 }
 
@@ -162,4 +165,51 @@ button {
 
 .new-note-input::placeholder {
   color: #565656;
+}
+
+.l-note-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4em;
+}
+
+.l-note-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6em;
+}
+
+.note-list-title {
+  padding-left: 1em;
+  color: #5f6368;
+  font-size: 0.7em;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+}
+
+.l-notes {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.l-note {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+  padding: 0.8em 0.8em 4em;
+}
+
+.note {
+  border: 0.1em solid rgb(214, 214, 214);
+  border-radius: 8px;
+  color: rgb(32, 33, 36);
+}
+
+.note-title {
+  font-weight: 500;
+}
+
+.note-body {
+  font-size: 0.9em;
 }/*# sourceMappingURL=style.css.map */
