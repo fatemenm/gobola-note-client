@@ -101,36 +101,46 @@ button {
   border: none;
   background-color: transparent;
   cursor: pointer;
-}
-
-.circle-button {
-  padding: 0.7em 0.8em;
-  border-radius: 50%;
   text-align: center;
 }
-
-.circle-button.search-button {
-  padding: 0.45em 0.6em;
+button.button-large {
+  padding: 0.7em 0.8em;
 }
-
-.circle-button:hover {
+button.button-small {
+  padding: 0.35em 0.4em;
+}
+button.button-circle {
+  border-radius: 50px;
+}
+button.button-circle:hover {
   background-color: #f1f1f2;
 }
-.circle-button:hover > .icon {
+button.button-circle:hover > .icon {
   color: #5f6368;
 }
-
-.circle-button.profile-button {
-  padding: 0.3em 0.4em;
+button.button-circle.button-search {
+  padding: 0.45em 0.6em;
 }
-
-.search-button:hover {
+button.button-circle.button-search:hover {
   background-color: #e4e6e8;
+}
+button.button-circle.button-profile {
+  padding: 0.3em 0.4em;
 }
 
 .icon {
   cursor: pointer;
   color: #797979;
+}
+.icon.icon-small {
+  font-size: 1.5em;
+}
+.icon.icon-small.material-symbols-outlined {
+  font-variation-settings: "wght" 400;
+  color: #626262;
+}
+.icon.icon-fill.material-symbols-outlined {
+  font-variation-settings: "FILL" 1;
 }
 
 .profile-image {
@@ -197,7 +207,7 @@ button {
   display: flex;
   flex-direction: column;
   gap: 1.2em;
-  padding: 0.8em 0.8em 4em;
+  padding: 0.8em 0.8em 0.2em 0.8em;
 }
 
 .note {
@@ -206,10 +216,20 @@ button {
   color: rgb(32, 33, 36);
 }
 
+.l-note-header {
+  justify-content: space-between;
+}
+
 .note-title {
   font-weight: 500;
 }
 
 .note-body {
   font-size: 0.9em;
+}
+
+.l-note-toolbar {
+  justify-content: flex-start;
+  padding-top: 1em;
+  gap: 1.2em;
 }/*# sourceMappingURL=style.css.map */

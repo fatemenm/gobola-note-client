@@ -98,36 +98,48 @@ button {
   border: none;
   background-color: transparent;
   cursor: pointer;
-}
-
-.circle-button {
-  padding: 0.7em 0.8em;
-  border-radius: 50%;
   text-align: center;
-}
-
-.circle-button.search-button {
-  padding: 0.45em 0.6em;
-}
-
-.circle-button:hover {
-  background-color: #f1f1f2;
-  & > .icon {
-    color: #5f6368;
+  &.button-large {
+    padding: 0.7em 0.8em;
   }
-}
-
-.circle-button.profile-button {
-  padding: 0.3em 0.4em;
-}
-
-.search-button:hover {
-  background-color: #e4e6e8;
+  &.button-small {
+    padding: 0.35em 0.4em;
+  }
+  &.button-circle {
+    border-radius: 50px;
+    &:hover {
+      background-color: #f1f1f2;
+      & > .icon {
+        color: #5f6368;
+      }
+    }
+    &.button-search {
+      padding: 0.45em 0.6em;
+      &:hover {
+        background-color: #e4e6e8;
+      }
+    }
+    &.button-profile {
+      padding: 0.3em 0.4em;
+    }
+  }
 }
 
 .icon {
   cursor: pointer;
   color: #797979;
+  &.icon-small {
+    font-size: 1.5em;
+    &.material-symbols-outlined {
+      font-variation-settings: "wght" 400;
+      color: #626262;
+    }
+  }
+  &.icon-fill {
+    &.material-symbols-outlined {
+      font-variation-settings: "FILL" 1;
+    }
+  }
 }
 
 .profile-image {
@@ -188,13 +200,20 @@ button {
   display: flex;
   flex-direction: column;
   gap: 1.2em;
-  padding: 0.8em 0.8em 4em;
+  padding: 0.8em 0.8em 0.2em 0.8em;
+}
+
+.l-note:hover {
 }
 
 .note {
   border: 0.1em solid rgb(214, 214, 214);
   border-radius: 8px;
   color: rgb(32, 33, 36);
+}
+
+.l-note-header {
+  justify-content: space-between;
 }
 
 .note-title {
@@ -204,4 +223,9 @@ button {
 
 .note-body {
   font-size: 0.9em;
+}
+.l-note-toolbar {
+  justify-content: flex-start;
+  padding-top: 1em;
+  gap: 1.2em;
 }
