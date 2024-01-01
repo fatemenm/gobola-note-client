@@ -40,7 +40,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 2em;
-  padding: 3% 25%;
+  padding: 3% 28%;
   // background-color: rgb(239, 239, 239);
 }
 .l-flex {
@@ -94,7 +94,7 @@ input[type="search"]::placeholder {
   font-style: 400;
 }
 
-button {
+.button {
   border: none;
   background-color: transparent;
   cursor: pointer;
@@ -103,7 +103,7 @@ button {
     padding: 0.7em 0.8em;
   }
   &.button-small {
-    padding: 0.35em 0.4em;
+    padding: 0.3em 0.4em;
   }
   &.button-circle {
     border-radius: 50px;
@@ -113,14 +113,22 @@ button {
         color: #5f6368;
       }
     }
-    &.button-search {
+    .button-search {
       padding: 0.45em 0.6em;
       &:hover {
         background-color: #e4e6e8;
       }
     }
-    &.button-profile {
+    .button-profile {
       padding: 0.3em 0.4em;
+    }
+  }
+  &.button-select-note {
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    & > .icon {
+      color: #111111;
     }
   }
 }
@@ -142,15 +150,6 @@ button {
   }
 }
 
-.icon-select-note {
-  &.material-symbols-outlined {
-    font-variation-settings: "FILL" 1;
-  }
-  position: absolute;
-  left: -0.4em;
-  top: -0.4em;
-}
-
 .profile-image {
   border-radius: 50%;
   object-fit: cover;
@@ -159,10 +158,10 @@ button {
 .l-new-note-shortcuts {
   background-color: white;
   border-radius: 9px;
-  box-shadow: 0.4px 0.4px 3px 1px rgb(230, 230, 230);
+  box-shadow: 0.05px 0.05px 7px 0.05px rgb(204, 204, 204);
   border-style: solid;
   border-color: #dfdfdf;
-  border-width: 0.1em 0.15em 0.15em;
+  border: 0.1px solid rgb(204, 204, 204);
   justify-content: space-between;
   align-items: center;
   padding: 0 1em;
@@ -207,14 +206,19 @@ button {
 
 .l-note-wrapper {
   position: relative;
+  border: 0.1em solid rgb(214, 214, 214);
+  border-radius: 8px;
+  button,
+  .toolbar {
+    visibility: hidden;
+  }
   &:hover {
-    & *[class~="is-hidden"] {
+    button,
+    .toolbar {
       visibility: visible;
     }
+    box-shadow: 0.1px 0.1px 3px 0.3px rgb(189, 189, 189);
   }
-}
-.is-hidden {
-  visibility: hidden;
 }
 
 .l-note {
@@ -225,8 +229,6 @@ button {
 }
 
 .note {
-  border: 0.1em solid rgb(214, 214, 214);
-  border-radius: 8px;
   color: rgb(32, 33, 36);
 }
 

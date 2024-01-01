@@ -38,7 +38,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 2em;
-  padding: 3% 25%;
+  padding: 3% 28%;
 }
 
 .l-flex {
@@ -97,35 +97,43 @@ input[type=search]::placeholder {
   font-style: 400;
 }
 
-button {
+.button {
   border: none;
   background-color: transparent;
   cursor: pointer;
   text-align: center;
 }
-button.button-large {
+.button.button-large {
   padding: 0.7em 0.8em;
 }
-button.button-small {
-  padding: 0.35em 0.4em;
+.button.button-small {
+  padding: 0.3em 0.4em;
 }
-button.button-circle {
+.button.button-circle {
   border-radius: 50px;
 }
-button.button-circle:hover {
+.button.button-circle:hover {
   background-color: #f1f1f2;
 }
-button.button-circle:hover > .icon {
+.button.button-circle:hover > .icon {
   color: #5f6368;
 }
-button.button-circle.button-search {
+.button.button-circle .button-search {
   padding: 0.45em 0.6em;
 }
-button.button-circle.button-search:hover {
+.button.button-circle .button-search:hover {
   background-color: #e4e6e8;
 }
-button.button-circle.button-profile {
+.button.button-circle .button-profile {
   padding: 0.3em 0.4em;
+}
+.button.button-select-note {
+  position: absolute;
+  top: -8px;
+  left: -8px;
+}
+.button.button-select-note > .icon {
+  color: #111111;
 }
 
 .icon {
@@ -143,15 +151,6 @@ button.button-circle.button-profile {
   font-variation-settings: "FILL" 1;
 }
 
-.icon-select-note {
-  position: absolute;
-  left: -0.4em;
-  top: -0.4em;
-}
-.icon-select-note.material-symbols-outlined {
-  font-variation-settings: "FILL" 1;
-}
-
 .profile-image {
   border-radius: 50%;
   -o-object-fit: cover;
@@ -161,10 +160,10 @@ button.button-circle.button-profile {
 .l-new-note-shortcuts {
   background-color: white;
   border-radius: 9px;
-  box-shadow: 0.4px 0.4px 3px 1px rgb(230, 230, 230);
+  box-shadow: 0.05px 0.05px 7px 0.05px rgb(204, 204, 204);
   border-style: solid;
   border-color: #dfdfdf;
-  border-width: 0.1em 0.15em 0.15em;
+  border: 0.1px solid rgb(204, 204, 204);
   justify-content: space-between;
   align-items: center;
   padding: 0 1em;
@@ -214,13 +213,19 @@ button.button-circle.button-profile {
 
 .l-note-wrapper {
   position: relative;
+  border: 0.1em solid rgb(214, 214, 214);
+  border-radius: 8px;
 }
-.l-note-wrapper:hover *[class~=is-hidden] {
-  visibility: visible;
-}
-
-.is-hidden {
+.l-note-wrapper button,
+.l-note-wrapper .toolbar {
   visibility: hidden;
+}
+.l-note-wrapper:hover {
+  box-shadow: 0.1px 0.1px 3px 0.3px rgb(189, 189, 189);
+}
+.l-note-wrapper:hover button,
+.l-note-wrapper:hover .toolbar {
+  visibility: visible;
 }
 
 .l-note {
@@ -231,8 +236,6 @@ button.button-circle.button-profile {
 }
 
 .note {
-  border: 0.1em solid rgb(214, 214, 214);
-  border-radius: 8px;
   color: rgb(32, 33, 36);
 }
 
