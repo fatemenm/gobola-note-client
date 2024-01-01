@@ -143,12 +143,17 @@ button.button-circle.button-profile {
   font-variation-settings: "FILL" 1;
 }
 
-.select-note-icon {
+.icon-pin {
+  visibility: hidden;
+}
+
+.icon-select-note {
+  visibility: hidden;
   position: absolute;
   left: -0.4em;
   top: -0.4em;
 }
-.select-note-icon.material-symbols-outlined {
+.icon-select-note.material-symbols-outlined {
   font-variation-settings: "FILL" 1;
 }
 
@@ -215,10 +220,7 @@ button.button-circle.button-profile {
 .l-note-wrapper {
   position: relative;
 }
-.l-note-wrapper > .select-note-icon {
-  visibility: hidden;
-}
-.l-note-wrapper:hover > .select-note-icon {
+.l-note-wrapper:hover .is-visible {
   visibility: visible;
 }
 
@@ -248,6 +250,7 @@ button.button-circle.button-profile {
 }
 
 .l-note-toolbar {
+  visibility: hidden;
   justify-content: flex-start;
   padding-top: 1em;
   gap: 1.2em;

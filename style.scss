@@ -142,7 +142,12 @@ button {
   }
 }
 
-.select-note-icon {
+.icon-pin {
+  visibility: hidden;
+}
+
+.icon-select-note {
+  visibility: hidden;
   &.material-symbols-outlined {
     font-variation-settings: "FILL" 1;
   }
@@ -207,11 +212,8 @@ button {
 
 .l-note-wrapper {
   position: relative;
-  & > .select-note-icon {
-    visibility: hidden;
-  }
   &:hover {
-    & > .select-note-icon {
+    & .is-visible {
       visibility: visible;
     }
   }
@@ -243,6 +245,7 @@ button {
   font-size: 0.9em;
 }
 .l-note-toolbar {
+  visibility: hidden;
   justify-content: flex-start;
   padding-top: 1em;
   gap: 1.2em;
