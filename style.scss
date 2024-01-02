@@ -13,8 +13,8 @@ body {
 .l-container {
   display: grid;
   grid-template-areas:
-    "header header header header"
-    "nav main main main";
+    "header header header header header header"
+    "nav main main main main main";
 }
 
 .l-header {
@@ -130,6 +130,11 @@ input[type="search"]::placeholder {
     & > .icon {
       color: #111111;
     }
+  }
+  &.button-navbar {
+    gap: 2em;
+    border: none;
+    background-color: transparent;
   }
 }
 
@@ -248,4 +253,24 @@ input[type="search"]::placeholder {
   justify-content: flex-start;
   padding-top: 1em;
   gap: 1.2em;
+}
+.navbar-menu {
+  display: flex;
+  flex-direction: column;
+  padding-top: 0.6em;
+  background-color: white;
+}
+.navbar-menu-item:nth-child(1) {
+  background-color: #feefc3;
+}
+
+.navbar-menu-item {
+  padding: 0.8em 0 0.8em 1.4em;
+  border-radius: 0 50px 50px 0;
+  .button-navbar-text {
+    font-size: 1.1em;
+  }
+  .icon {
+    color: rgb(81, 81, 81);
+  }
 }

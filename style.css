@@ -13,7 +13,7 @@ body {
 
 .l-container {
   display: grid;
-  grid-template-areas: "header header header header" "nav main main main";
+  grid-template-areas: "header header header header header header" "nav main main main main main";
 }
 
 .l-header {
@@ -135,6 +135,11 @@ input[type=search]::placeholder {
 .button.button-select-note > .icon {
   color: #111111;
 }
+.button.button-navbar {
+  gap: 2em;
+  border: none;
+  background-color: transparent;
+}
 
 .icon {
   cursor: pointer;
@@ -255,4 +260,26 @@ input[type=search]::placeholder {
   justify-content: flex-start;
   padding-top: 1em;
   gap: 1.2em;
+}
+
+.navbar-menu {
+  display: flex;
+  flex-direction: column;
+  padding-top: 0.6em;
+  background-color: white;
+}
+
+.navbar-menu-item:nth-child(1) {
+  background-color: #feefc3;
+}
+
+.navbar-menu-item {
+  padding: 0.8em 0 0.8em 1.4em;
+  border-radius: 0 50px 50px 0;
+}
+.navbar-menu-item .button-navbar-text {
+  font-size: 1.1em;
+}
+.navbar-menu-item .icon {
+  color: rgb(81, 81, 81);
 }/*# sourceMappingURL=style.css.map */
