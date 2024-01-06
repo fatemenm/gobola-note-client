@@ -27,7 +27,11 @@
           <menu class="l-flex">
             <!-- hamburger menu -->
             <li>
-              <button class="button button-large button-circle">
+              <button
+                class="button button-large button-circle"
+                id="hamburger-menu"
+                onclick="toggleNavbar()"
+              >
                 <span class="material-symbols-outlined icon"> menu </span>
               </button>
             </li>
@@ -79,7 +83,7 @@
           <!-- google button menu -->
           <menu class="l-flex">
             <li>
-              <button class="button button-large button-circle">
+              <button class="button button-medium button-circle">
                 <span class="material-symbols-outlined icon"> apps </span>
               </button>
             </li>
@@ -105,20 +109,44 @@
           </li>
           <li class="navbar-menu-item">
             <button class="l-flex button button-navbar">
-              <span class="material-symbols-outlined icon"> lightbulb </span>
-              <span class="button-navbar-text">Notes</span>
+              <span class="material-symbols-outlined icon"> notifications</span>
+              <span class="button-navbar-text">Reminders</span>
             </button>
           </li>
           <li class="navbar-menu-item">
             <button class="l-flex button button-navbar">
-              <span class="material-symbols-outlined icon"> lightbulb </span>
-              <span class="button-navbar-text">Notes</span>
+              <span class="material-symbols-outlined icon"> label </span>
+              <span class="button-navbar-text">Now</span>
             </button>
           </li>
           <li class="navbar-menu-item">
             <button class="l-flex button button-navbar">
-              <span class="material-symbols-outlined icon"> lightbulb </span>
-              <span class="button-navbar-text">Notes</span>
+              <span class="material-symbols-outlined icon"> label </span>
+              <span class="button-navbar-text">Recipes</span>
+            </button>
+          </li>
+          <li class="navbar-menu-item">
+            <button class="l-flex button button-navbar">
+              <span class="material-symbols-outlined icon"> label </span>
+              <span class="button-navbar-text">Therapy</span>
+            </button>
+          </li>
+          <li class="navbar-menu-item">
+            <button class="l-flex button button-navbar">
+              <span class="material-symbols-outlined icon"> edit </span>
+              <span class="button-navbar-text">Edit labels</span>
+            </button>
+          </li>
+          <li class="navbar-menu-item">
+            <button class="l-flex button button-navbar">
+              <span class="material-symbols-outlined icon"> archive </span>
+              <span class="button-navbar-text">Archive</span>
+            </button>
+          </li>
+          <li class="navbar-menu-item">
+            <button class="l-flex button button-navbar">
+              <span class="material-symbols-outlined icon"> delete </span>
+              <span class="button-navbar-text">Trash</span>
             </button>
           </li>
         </menu>
@@ -146,6 +174,114 @@
           <div class="l-note-list">
             <span class="note-list-title">PINNED</span>
             <div class="l-notes">
+              <div class="l-note-wrapper">
+                <button class="button button-select-note">
+                  <span class="material-symbols-outlined icon icon-fill">
+                    check_circle
+                  </span>
+                </button>
+                <div class="l-note note">
+                  <header class="l-flex l-note-header">
+                    <span class="note-title">Salad Ingredients</span>
+                    <button class="button button-circle button-small">
+                      <span
+                        class="material-symbols-outlined icon icon-fill icon-pin"
+                      >
+                        push_pin
+                      </span>
+                    </button>
+                  </header>
+                  <div class="note-body">
+                    Carrot 80g, Cucumber 90g, Lettuce 100g
+                  </div>
+                  <div class="l-flex l-note-toolbar">
+                    <button class="button button-circle button-small">
+                      <span class="material-symbols-outlined icon icon-small">
+                        notification_add
+                      </span>
+                    </button>
+                    <button class="button button-circle button-small">
+                      <span class="material-symbols-outlined icon icon-small">
+                        person_add
+                      </span>
+                    </button>
+                    <button class="button button-circle button-small">
+                      <span class="material-symbols-outlined icon icon-small">
+                        palette
+                      </span>
+                    </button>
+                    <button class="button button-circle button-small">
+                      <span class="material-symbols-outlined icon icon-small">
+                        image
+                      </span>
+                    </button>
+                    <button class="button button-circle button-small">
+                      <span class="material-symbols-outlined icon icon-small">
+                        archive
+                      </span>
+                    </button>
+                    <button class="button button-circle button-small">
+                      <span class="material-symbols-outlined icon icon-small">
+                        more_vert
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="l-note-wrapper">
+                <button class="button button-select-note">
+                  <span class="material-symbols-outlined icon icon-fill">
+                    check_circle
+                  </span>
+                </button>
+                <div class="l-note note">
+                  <header class="l-flex l-note-header">
+                    <span class="note-title">Salad Ingredients</span>
+                    <button class="button button-circle button-small">
+                      <span
+                        class="material-symbols-outlined icon icon-fill icon-pin"
+                      >
+                        push_pin
+                      </span>
+                    </button>
+                  </header>
+                  <div class="note-body">
+                    Carrot 80g, Cucumber 90g, Lettuce 100g
+                  </div>
+                  <div class="l-flex l-note-toolbar">
+                    <button class="button button-circle button-small">
+                      <span class="material-symbols-outlined icon icon-small">
+                        notification_add
+                      </span>
+                    </button>
+                    <button class="button button-circle button-small">
+                      <span class="material-symbols-outlined icon icon-small">
+                        person_add
+                      </span>
+                    </button>
+                    <button class="button button-circle button-small">
+                      <span class="material-symbols-outlined icon icon-small">
+                        palette
+                      </span>
+                    </button>
+                    <button class="button button-circle button-small">
+                      <span class="material-symbols-outlined icon icon-small">
+                        image
+                      </span>
+                    </button>
+                    <button class="button button-circle button-small">
+                      <span class="material-symbols-outlined icon icon-small">
+                        archive
+                      </span>
+                    </button>
+                    <button class="button button-circle button-small">
+                      <span class="material-symbols-outlined icon icon-small">
+                        more_vert
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
               <div class="l-note-wrapper">
                 <button class="button button-select-note">
                   <span class="material-symbols-outlined icon icon-fill">
@@ -372,5 +508,6 @@
         </div>
       </main>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>

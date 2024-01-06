@@ -13,7 +13,8 @@ body {
 
 .l-container {
   display: grid;
-  grid-template-areas: "header header header header header header" "nav main main main main main";
+  grid-template-columns: 280px 1fr 1fr;
+  grid-template-areas: "header header header" "nav main main";
 }
 
 .l-header {
@@ -22,23 +23,31 @@ body {
   flex-direction: row;
   padding: 0.6em 0.8em;
   gap: 45px;
+  position: fixed;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1;
 }
 
 #header {
   border-bottom: 0.5px solid rgb(212, 212, 212);
+  background-color: white;
 }
 
 .l-nav {
   grid-area: nav;
-  background-color: rgb(238, 240, 240);
+  margin-top: 72px;
 }
 
 .l-main {
   grid-area: main;
   display: flex;
   flex-direction: column;
-  gap: 2em;
-  padding: 3% 28%;
+  gap: 3em;
+  align-items: center;
+  padding-top: 2em;
+  padding-bottom: 1em;
+  margin-top: 72px;
 }
 
 .l-flex {
@@ -106,6 +115,9 @@ input[type=search]::placeholder {
 .button.button-large {
   padding: 0.7em 0.8em;
 }
+.button.button-medium {
+  padding: 0.5em 0.6em;
+}
 .button.button-small {
   padding: 0.3em 0.4em;
 }
@@ -125,7 +137,7 @@ input[type=search]::placeholder {
   background-color: #e4e6e8;
 }
 .button.button-circle .button-profile {
-  padding: 0.3em 0.4em;
+  padding: 0.4em 0.5em;
 }
 .button.button-select-note {
   position: absolute;
@@ -172,6 +184,9 @@ input[type=search]::placeholder {
   justify-content: space-between;
   align-items: center;
   padding: 0 1em;
+  width: 80%;
+  max-width: 600px;
+  box-sizing: border-box;
 }
 
 .new-note-input {
@@ -191,9 +206,12 @@ input[type=search]::placeholder {
 }
 
 .l-note-list-container {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   gap: 4em;
+  width: 80%;
+  max-width: 600px;
 }
 
 .l-note-list {
@@ -273,6 +291,10 @@ input[type=search]::placeholder {
   background-color: #feefc3;
 }
 
+.navbar-menu-item:hover {
+  background-color: #f1f3f4;
+}
+
 .navbar-menu-item {
   padding: 0.8em 0 0.8em 1.4em;
   border-radius: 0 50px 50px 0;
@@ -282,4 +304,12 @@ input[type=search]::placeholder {
 }
 .navbar-menu-item .icon {
   color: rgb(81, 81, 81);
+}
+
+#navbar.is-close {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+#navbar.is-close .button-navbar-text {
+  display: none;
 }/*# sourceMappingURL=style.css.map */
