@@ -3,6 +3,16 @@
   padding: 0;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  -webkit-transition: background-color 0s 600000s, color 0s 600000s;
+  transition: background-color 0s 600000s, color 0s 600000s;
+}
+
+input[type=search]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -85,25 +95,34 @@ menu {
   padding: 0.1em 0.8em;
   gap: 0.6em;
 }
+.search-bar .button-close {
+  display: none;
+}
+.search-bar.is-focused {
+  background-color: white;
+  box-shadow: 1px 1px 4px 1px rgb(185, 185, 185);
+}
+.search-bar.is-focused button:hover {
+  background-color: #f1f1f2;
+}
+.search-bar.is-focused .button-close {
+  display: inline-block;
+}
 
 input {
   border: none;
   font-family: "Roboto", sans-serif;
+  font-size: 1em;
+}
+
+input:focus {
+  outline: none;
 }
 
 input[type=search] {
-  height: 2em;
-  background-color: #f1f3f4;
-}
-
-input[type=search]::-moz-placeholder {
-  font-size: 1.3em;
-  font-style: 400;
-}
-
-input[type=search]::placeholder {
-  font-size: 1.3em;
-  font-style: 400;
+  height: 100%;
+  background-color: transparent;
+  flex-grow: 2;
 }
 
 .button {
@@ -116,7 +135,7 @@ input[type=search]::placeholder {
   padding: 0.7em 0.8em;
 }
 .button.button-medium {
-  padding: 0.5em 0.6em;
+  padding: 0.45em 0.6em;
 }
 .button.button-small {
   padding: 0.3em 0.4em;
@@ -130,13 +149,7 @@ input[type=search]::placeholder {
 .button.button-circle:hover > .icon {
   color: #5f6368;
 }
-.button.button-circle .button-search {
-  padding: 0.45em 0.6em;
-}
-.button.button-circle .button-search:hover {
-  background-color: #e4e6e8;
-}
-.button.button-circle .button-profile {
+.button.button-circle.button-profile {
   padding: 0.4em 0.5em;
 }
 .button.button-select-note {
@@ -148,9 +161,7 @@ input[type=search]::placeholder {
   color: #111111;
 }
 .button.button-navbar {
-  gap: 2em;
-  border: none;
-  background-color: transparent;
+  gap: 2.5em;
 }
 
 .icon {
@@ -192,7 +203,6 @@ input[type=search]::placeholder {
 .new-note-input {
   height: 100%;
   border-radius: 8px 0 0 8px;
-  font-size: 1em;
   font-weight: 400;
   flex-grow: 2;
 }
@@ -312,4 +322,9 @@ input[type=search]::placeholder {
 }
 #navbar.is-close .button-navbar-text {
   display: none;
+}
+#navbar.is-close .navbar-menu-item {
+  border-radius: 50%;
+  margin-left: 0.8em;
+  padding: 0.7em 0.8em;
 }/*# sourceMappingURL=style.css.map */

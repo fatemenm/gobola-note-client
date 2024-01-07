@@ -54,11 +54,16 @@
             </li>
           </menu>
           <!-- search bar -->
-          <div class="l-flex search-bar">
-            <button class="button button-circle button-search">
+          <div class="l-flex search-bar" id="search-bar">
+            <button class="button button-circle button-medium button-search">
               <span class="material-symbols-outlined icon"> search </span>
             </button>
-            <input type="search" placeholder="Search" />
+            <input id="search-input" type="search" placeholder="Search" />
+            <button
+              class="button button-circle button-medium button-close is-hidden"
+            >
+              <span class="material-symbols-outlined icon"> close </span>
+            </button>
           </div>
         </div>
         <div class="l-flex l-header-right-part">
