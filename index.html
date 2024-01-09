@@ -161,82 +161,94 @@
         </menu>
       </nav>
       <main class="l-main">
-        <div class="l-flex l-new-note-shortcut" id="new-note-shortcut">
-          <input
-            type="text"
-            placeholder="Take a note..."
-            class="new-note-input"
-          />
-          <div>
-            <button class="button button-large button-circle">
-              <span class="material-symbols-outlined icon"> check_box </span>
-            </button>
-            <button class="button button-large button-circle">
-              <span class="material-symbols-outlined icon"> brush </span>
-            </button>
-            <button class="button button-large button-circle">
-              <span class="material-symbols-outlined icon"> image </span>
-            </button>
-          </div>
-        </div>
-        <div class="l-new-note-shortcut-expanded">
-          <header class="l-flex">
-            <span>Title</span>
-            <button class="button button-circle button-small">
-              <span class="material-symbols-outlined icon icon-pin">
-                push_pin
-              </span>
-            </button>
-          </header>
-          <input type="text" placeholder="Take a note..." class="" />
-          <div class="l-flex l-note-toolbar">
-            <div class="l-flex icon-button-bar">
-              <button class="button button-circle button-small">
-                <span class="material-symbols-outlined icon icon-small">
-                  notification_add
-                </span>
+        <div class="l-new-note-wrapper is-view" id="new-note-wrapper">
+          <div class="l-flex l-new-note-shortcut" id="new-note-shortcut">
+            <input
+              type="text"
+              placeholder="Take a note..."
+              class="new-note-input"
+            />
+            <div>
+              <button class="button button-large button-circle">
+                <span class="material-symbols-outlined icon"> check_box </span>
               </button>
-              <button class="button button-circle button-small">
-                <span class="material-symbols-outlined icon icon-small">
-                  person_add
-                </span>
+              <button class="button button-large button-circle">
+                <span class="material-symbols-outlined icon"> brush </span>
               </button>
-              <button class="button button-circle button-small">
-                <span class="material-symbols-outlined icon icon-small">
-                  palette
-                </span>
-              </button>
-              <button class="button button-circle button-small">
-                <span class="material-symbols-outlined icon icon-small">
-                  image
-                </span>
-              </button>
-              <button class="button button-circle button-small">
-                <span class="material-symbols-outlined icon icon-small">
-                  archive
-                </span>
-              </button>
-              <button class="button button-circle button-small">
-                <span class="material-symbols-outlined icon icon-small">
-                  more_vert
-                </span>
-              </button>
-              <button class="button button-circle button-small">
-                <span
-                  class="material-symbols-outlined icon icon-small icon-disabled"
-                >
-                  undo
-                </span>
-              </button>
-              <button class="button button-circle button-small">
-                <span
-                  class="material-symbols-outlined icon icon-small icon-disabled"
-                >
-                  redo
-                </span>
+              <button class="button button-large button-circle">
+                <span class="material-symbols-outlined icon"> image </span>
               </button>
             </div>
-            <button class="button rectangle-button">Close</button>
+          </div>
+          <div
+            class="l-new-note-shortcut-expanded"
+            id="new-note-shortcut-expanded"
+          >
+            <header class="l-flex">
+              <input type="text" placeholder="Title" />
+              <button class="button button-circle button-small">
+                <span class="material-symbols-outlined icon icon-pin">
+                  push_pin
+                </span>
+              </button>
+            </header>
+            <input
+              type="text"
+              placeholder="Take a note..."
+              class=""
+              id="new-note-body"
+            />
+            <div class="l-flex l-note-toolbar">
+              <div class="l-flex icon-button-bar">
+                <button class="button button-circle button-small">
+                  <span class="material-symbols-outlined icon icon-small">
+                    notification_add
+                  </span>
+                </button>
+                <button class="button button-circle button-small">
+                  <span class="material-symbols-outlined icon icon-small">
+                    person_add
+                  </span>
+                </button>
+                <button class="button button-circle button-small">
+                  <span class="material-symbols-outlined icon icon-small">
+                    palette
+                  </span>
+                </button>
+                <button class="button button-circle button-small">
+                  <span class="material-symbols-outlined icon icon-small">
+                    image
+                  </span>
+                </button>
+                <button class="button button-circle button-small">
+                  <span class="material-symbols-outlined icon icon-small">
+                    archive
+                  </span>
+                </button>
+                <button class="button button-circle button-small">
+                  <span class="material-symbols-outlined icon icon-small">
+                    more_vert
+                  </span>
+                </button>
+                <button class="button button-circle button-small">
+                  <span
+                    class="material-symbols-outlined icon icon-small icon-disabled"
+                  >
+                    undo
+                  </span>
+                </button>
+                <button class="button button-circle button-small">
+                  <span
+                    class="material-symbols-outlined icon icon-small icon-disabled"
+                  >
+                    redo
+                  </span>
+                </button>
+              </div>
+              <button class="button rectangle-button" id="button-close">
+                Close
+              </button>
+            </div>
           </div>
         </div>
         <div class="l-note-list-container">

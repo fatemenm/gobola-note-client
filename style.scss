@@ -208,6 +208,30 @@ input[type="search"] {
   object-fit: cover;
 }
 
+.l-new-note-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  max-width: 600px;
+  box-sizing: border-box;
+  &.is-view {
+    & > .l-new-note-shortcut {
+      display: flex;
+    }
+    & > .l-new-note-shortcut-expanded {
+      display: none;
+    }
+  }
+  &.is-edit {
+    & > .l-new-note-shortcut {
+      display: none;
+    }
+    & > .l-new-note-shortcut-expanded {
+      display: flex;
+    }
+  }
+}
+
 .l-new-note-shortcut {
   background-color: white;
   border-radius: 9px;
@@ -218,8 +242,6 @@ input[type="search"] {
   justify-content: space-between;
   align-items: center;
   padding: 0 1em;
-  width: 80%;
-  max-width: 600px;
   box-sizing: border-box;
 }
 
@@ -228,8 +250,6 @@ input[type="search"] {
   flex-direction: column;
   gap: 1.2em;
   padding: 0.3em 1em;
-  width: 80%;
-  max-width: 600px;
   box-sizing: border-box;
   background-color: white;
   border-radius: 9px;
