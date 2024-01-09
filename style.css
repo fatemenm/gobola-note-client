@@ -95,8 +95,17 @@ menu {
   padding: 0.1em 0.8em;
   gap: 0.6em;
 }
-.search-bar .button-close {
+.search-bar .button-close-searchbar {
   display: none;
+}
+.search-bar .button-search {
+  border-radius: 50px;
+}
+.search-bar .button-search:hover {
+  background-color: #e4e6e8;
+}
+.search-bar .button-search:hover > .icon {
+  color: #5f6368;
 }
 .search-bar.is-focused {
   background-color: white;
@@ -105,7 +114,7 @@ menu {
 .search-bar.is-focused button:hover {
   background-color: #f1f1f2;
 }
-.search-bar.is-focused .button-close {
+.search-bar.is-focused .button-close-searchbar {
   display: inline-block;
 }
 
@@ -152,6 +161,16 @@ input[type=search] {
 .button.button-circle.button-profile {
   padding: 0.4em 0.5em;
 }
+.button.rectangle-button {
+  padding: 0.7em 1.8em;
+  border-radius: 4px;
+  color: #232325;
+  letter-spacing: 0.5px;
+  font-size: 0.9em;
+}
+.button.rectangle-button:hover {
+  background-color: #f9f9fa;
+}
 .button.button-select-note {
   position: absolute;
   top: -8px;
@@ -175,6 +194,9 @@ input[type=search] {
   font-variation-settings: "wght" 400;
   color: #626262;
 }
+.icon.icon-small.material-symbols-outlined.icon-disabled {
+  color: #c6c6c6;
+}
 .icon.icon-fill.material-symbols-outlined {
   font-variation-settings: "FILL" 1;
 }
@@ -185,7 +207,7 @@ input[type=search] {
      object-fit: cover;
 }
 
-.l-new-note-shortcuts {
+.l-new-note-shortcut {
   background-color: white;
   border-radius: 9px;
   box-shadow: 0.05px 0.05px 7px 0.05px rgb(204, 204, 204);
@@ -198,6 +220,48 @@ input[type=search] {
   width: 80%;
   max-width: 600px;
   box-sizing: border-box;
+}
+
+.l-new-note-shortcut-expanded {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+  padding: 0.3em 1em;
+  width: 80%;
+  max-width: 600px;
+  box-sizing: border-box;
+  background-color: white;
+  border-radius: 9px;
+  box-shadow: 0.05px 0.05px 7px 0.05px rgb(204, 204, 204);
+  border-style: solid;
+  border-color: #dfdfdf;
+  border: 0.1px solid rgb(204, 204, 204);
+}
+.l-new-note-shortcut-expanded > .l-note-toolbar {
+  margin-top: 0;
+  justify-content: space-between;
+}
+.l-new-note-shortcut-expanded > .l-note-toolbar > .icon-button-bar {
+  justify-content: flex-start;
+  gap: 1.2em;
+}
+.l-new-note-shortcut-expanded > .l-note-toolbar > .rectangle-button {
+  margin-bottom: 0.2em;
+}
+.l-new-note-shortcut-expanded > input {
+  font-size: 0.9em;
+}
+.l-new-note-shortcut-expanded > input::-moz-placeholder {
+  color: #565656;
+}
+.l-new-note-shortcut-expanded > input::placeholder {
+  color: #565656;
+}
+.l-new-note-shortcut-expanded > header {
+  justify-content: space-between;
+}
+.l-new-note-shortcut-expanded > header > span {
+  color: #717171;
 }
 
 .new-note-input {
@@ -286,7 +350,7 @@ input[type=search] {
 
 .l-note-toolbar {
   justify-content: flex-start;
-  padding-top: 1em;
+  margin-top: 1em;
   gap: 1.2em;
 }
 

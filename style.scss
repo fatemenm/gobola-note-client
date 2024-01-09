@@ -93,8 +93,17 @@ menu {
   flex-grow: 2;
   padding: 0.1em 0.8em;
   gap: 0.6em;
-  .button-close {
+  .button-close-searchbar {
     display: none;
+  }
+  .button-search {
+    border-radius: 50px;
+    &:hover {
+      background-color: #e4e6e8;
+      & > .icon {
+        color: #5f6368;
+      }
+    }
   }
   &.is-focused {
     background-color: white;
@@ -102,7 +111,7 @@ menu {
     button:hover {
       background-color: #f1f1f2;
     }
-    .button-close {
+    .button-close-searchbar {
       display: inline-block;
     }
   }
@@ -151,6 +160,16 @@ input[type="search"] {
       padding: 0.4em 0.5em;
     }
   }
+  &.rectangle-button {
+    padding: 0.7em 1.8em;
+    border-radius: 4px;
+    color: #232325;
+    letter-spacing: 0.5px;
+    &:hover {
+      background-color: #f9f9fa;
+    }
+    font-size: 0.9em;
+  }
   &.button-select-note {
     position: absolute;
     top: -8px;
@@ -172,6 +191,9 @@ input[type="search"] {
     &.material-symbols-outlined {
       font-variation-settings: "wght" 400;
       color: #626262;
+      &.icon-disabled {
+        color: #c6c6c6;
+      }
     }
   }
   &.icon-fill {
@@ -186,7 +208,7 @@ input[type="search"] {
   object-fit: cover;
 }
 
-.l-new-note-shortcuts {
+.l-new-note-shortcut {
   background-color: white;
   border-radius: 9px;
   box-shadow: 0.05px 0.05px 7px 0.05px rgb(204, 204, 204);
@@ -199,6 +221,45 @@ input[type="search"] {
   width: 80%;
   max-width: 600px;
   box-sizing: border-box;
+}
+
+.l-new-note-shortcut-expanded {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+  padding: 0.3em 1em;
+  width: 80%;
+  max-width: 600px;
+  box-sizing: border-box;
+  background-color: white;
+  border-radius: 9px;
+  box-shadow: 0.05px 0.05px 7px 0.05px rgb(204, 204, 204);
+  border-style: solid;
+  border-color: #dfdfdf;
+  border: 0.1px solid rgb(204, 204, 204);
+  & > .l-note-toolbar {
+    margin-top: 0;
+    justify-content: space-between;
+    & > .icon-button-bar {
+      justify-content: flex-start;
+      gap: 1.2em;
+    }
+    & > .rectangle-button {
+      margin-bottom: 0.2em;
+    }
+  }
+  & > input {
+    font-size: 0.9em;
+    &::placeholder {
+      color: #565656;
+    }
+  }
+  & > header {
+    justify-content: space-between;
+    & > span {
+      color: #717171;
+    }
+  }
 }
 
 .new-note-input {
@@ -282,7 +343,7 @@ input[type="search"] {
 }
 .l-note-toolbar {
   justify-content: flex-start;
-  padding-top: 1em;
+  margin-top: 1em;
   gap: 1.2em;
 }
 .navbar-menu {

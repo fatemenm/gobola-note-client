@@ -55,12 +55,16 @@
           </menu>
           <!-- search bar -->
           <div class="l-flex search-bar" id="search-bar">
-            <button class="button button-circle button-medium button-search">
+            <button
+              class="button button-medium button-search"
+              id="button-search"
+            >
               <span class="material-symbols-outlined icon"> search </span>
             </button>
             <input id="search-input" type="search" placeholder="Search" />
             <button
-              class="button button-circle button-medium button-close is-hidden"
+              class="button button-circle button-medium button-close-searchbar is-hidden"
+              id="button-close-searchbar"
             >
               <span class="material-symbols-outlined icon"> close </span>
             </button>
@@ -157,7 +161,7 @@
         </menu>
       </nav>
       <main class="l-main">
-        <div class="l-flex l-new-note-shortcuts">
+        <div class="l-flex l-new-note-shortcut" id="new-note-shortcut">
           <input
             type="text"
             placeholder="Take a note..."
@@ -173,6 +177,66 @@
             <button class="button button-large button-circle">
               <span class="material-symbols-outlined icon"> image </span>
             </button>
+          </div>
+        </div>
+        <div class="l-new-note-shortcut-expanded">
+          <header class="l-flex">
+            <span>Title</span>
+            <button class="button button-circle button-small">
+              <span class="material-symbols-outlined icon icon-pin">
+                push_pin
+              </span>
+            </button>
+          </header>
+          <input type="text" placeholder="Take a note..." class="" />
+          <div class="l-flex l-note-toolbar">
+            <div class="l-flex icon-button-bar">
+              <button class="button button-circle button-small">
+                <span class="material-symbols-outlined icon icon-small">
+                  notification_add
+                </span>
+              </button>
+              <button class="button button-circle button-small">
+                <span class="material-symbols-outlined icon icon-small">
+                  person_add
+                </span>
+              </button>
+              <button class="button button-circle button-small">
+                <span class="material-symbols-outlined icon icon-small">
+                  palette
+                </span>
+              </button>
+              <button class="button button-circle button-small">
+                <span class="material-symbols-outlined icon icon-small">
+                  image
+                </span>
+              </button>
+              <button class="button button-circle button-small">
+                <span class="material-symbols-outlined icon icon-small">
+                  archive
+                </span>
+              </button>
+              <button class="button button-circle button-small">
+                <span class="material-symbols-outlined icon icon-small">
+                  more_vert
+                </span>
+              </button>
+              <button class="button button-circle button-small">
+                <span
+                  class="material-symbols-outlined icon icon-small icon-disabled"
+                >
+                  undo
+                </span>
+              </button>
+              <button class="button button-circle button-small">
+                <span
+                  class="material-symbols-outlined icon icon-small icon-disabled"
+                >
+                  redo
+                </span>
+              </button>
+            </div>
+            <button class="button rectangle-button">Close</button>
           </div>
         </div>
         <div class="l-note-list-container">
