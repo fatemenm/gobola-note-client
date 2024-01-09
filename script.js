@@ -1,3 +1,5 @@
+let body = document.getElementsByTagName("body")
+let header = document.getElementById("header")
 let hamburgerMenu = document.getElementById("hamburger-menu")
 let navbar = document.getElementById("navbar")
 let searchInput = document.getElementById("search-input")
@@ -49,6 +51,30 @@ newNoteWrapper.querySelector("#new-note-shortcut-expanded").querySelector("#butt
     newNoteWrapper.querySelector("#new-note-shortcut").querySelector("input").focus()
     newNoteWrapper.classList.remove("is-edit")
     newNoteWrapper.classList.add("is-view") 
+})
+
+// body.addEventListener("scroll", () => {
+//     if(body.scrolltop === 0){
+//         header.classList.add("has-shadow")
+//     } else{
+//         header.classList.remove("has-shadow")
+//     }
+// })
+
+let media700px = window.matchMedia("(max-width: 750px)")
+media700px.addEventListener("change", () => {
+    if(media700px.matches){
+        if(header.querySelector(".l-header-right-part").firstElementChild.children.length != 4){
+            let menu = header.querySelector(".l-header-right-part").firstElementChild;
+            let searchButton = document.createElement("button")
+            searchButton.className = "button button-medium button-search" 
+            let span = document.createElement("span")
+            span.className = "material-symbols-outlined icon"
+            span.innerHTML = "search"
+            searchButton.appendChild(span)
+            menu.insertBefore(document.createElement("li").appendChild(searchButton), menu.firstElementChild)
+        }
+    }
 })
 
 

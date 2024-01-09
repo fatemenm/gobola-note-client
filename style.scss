@@ -41,7 +41,9 @@ body {
 #header {
   border-bottom: 0.5px solid rgb(212, 212, 212);
   background-color: white;
-  // box-shadow: 0 0 6px 3px #bcbcbc;
+  &.has-shadow {
+    box-shadow: 0 0 6px 3px #bcbcbc;
+  }
 }
 
 .l-nav {
@@ -58,6 +60,10 @@ body {
   padding-top: 2em;
   padding-bottom: 1em;
   margin-top: 72px;
+  & > div {
+    width: 80%;
+    max-width: 600px;
+  }
 }
 .l-flex {
   display: flex;
@@ -211,8 +217,6 @@ input[type="search"] {
 .l-new-note-wrapper {
   display: flex;
   flex-direction: column;
-  width: 80%;
-  max-width: 600px;
   box-sizing: border-box;
   &.is-view {
     & > .l-new-note-shortcut {
@@ -243,6 +247,9 @@ input[type="search"] {
   align-items: center;
   padding: 0 1em;
   box-sizing: border-box;
+  & > div {
+    flex-wrap: nowrap;
+  }
 }
 
 .l-new-note-shortcut-expanded {
@@ -298,8 +305,6 @@ input[type="search"] {
   display: flex;
   flex-direction: column;
   gap: 4em;
-  width: 80%;
-  max-width: 600px;
 }
 
 .l-note-list {
@@ -400,5 +405,33 @@ input[type="search"] {
     border-radius: 50%;
     margin-left: 0.8em;
     padding: 0.7em 0.8em;
+  }
+}
+
+@media (max-width: 1034px) {
+  .l-header-right-part {
+    gap: 0;
+  }
+  .l-header {
+    gap: 15px;
+  }
+  .l-main > div {
+    width: 90%;
+    max-width: none;
+  }
+}
+
+@media (max-width: 750px) {
+  .l-header-left-part {
+    flex-grow: 1;
+    & > .search-bar {
+      display: none;
+    }
+  }
+  .l-header {
+    justify-content: space-between;
+  }
+  .l-new-note-shortcut > div {
+    flex-wrap: nowrap;
   }
 }
