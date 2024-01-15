@@ -13,7 +13,6 @@ let newNoteShortcut = document.getElementById("new-note-shortcut")
 function toggleNavbar() {
     if (navbar.classList.contains("is-close")) {
         navbar.classList.remove("is-close")
-
     } else {
         navbar.classList.add("is-close")
     }
@@ -54,13 +53,6 @@ newNoteWrapper.querySelector("#new-note-shortcut-expanded").querySelector("#butt
     newNoteWrapper.classList.add("is-view")
 })
 
-// body.addEventListener("scroll", () => {
-//     if(body.scrolltop === 0){
-//         header.classList.add("has-shadow")
-//     } else{
-//         header.classList.remove("has-shadow")
-//     }
-// })
 
 let media750px = window.matchMedia("(max-width: 750px)")
 media750px.addEventListener("change", () => {
@@ -90,9 +82,16 @@ media750px.addEventListener("change", () => {
         if (headerRightToolbarMenu.querySelector("#out-button-search") !== null)
             outButtonSearch.addEventListener("click", () => {
             })
+
+        if (!(navbar.classList.contains("is-close"))) {
+            navbar.classList.add("is-close")
+        }
+
     } else {
         headerRightToolbarMenu.querySelector("li:has(> .button-search)").remove()
-        headerRightToolbarMenu.querySelector("div").remove()
+        if (navbar.classList.contains("is-close")) {
+            navbar.classList.remove("is-close")
+        }
     }
 })
 
