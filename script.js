@@ -9,8 +9,9 @@ let buttonCloseSearchbar = document.getElementById("button-close-searchbar")
 let newNoteWrapper = document.getElementById("new-note-wrapper")
 let newNoteShortcut = document.getElementById("new-note-shortcut")
 
-function toggleNavbar(){
-    if (navbar.classList.contains("is-close")){
+
+function toggleNavbar() {
+    if (navbar.classList.contains("is-close")) {
         navbar.classList.remove("is-close")
 
     } else {
@@ -44,13 +45,13 @@ newNoteWrapper.querySelector("#new-note-shortcut").querySelector("input").addEve
 newNoteWrapper.querySelector("#new-note-shortcut-expanded").querySelector("#new-note-body").addEventListener("focusout", () => {
     newNoteWrapper.querySelector("#new-note-shortcut").querySelector("input").focus()
     newNoteWrapper.classList.remove("is-edit")
-    newNoteWrapper.classList.add("is-view") 
+    newNoteWrapper.classList.add("is-view")
 })
 
 newNoteWrapper.querySelector("#new-note-shortcut-expanded").querySelector("#button-close").addEventListener("click", () => {
     newNoteWrapper.querySelector("#new-note-shortcut").querySelector("input").focus()
     newNoteWrapper.classList.remove("is-edit")
-    newNoteWrapper.classList.add("is-view") 
+    newNoteWrapper.classList.add("is-view")
 })
 
 // body.addEventListener("scroll", () => {
@@ -61,19 +62,31 @@ newNoteWrapper.querySelector("#new-note-shortcut-expanded").querySelector("#butt
 //     }
 // })
 
-let media700px = window.matchMedia("(max-width: 750px)")
-media700px.addEventListener("change", () => {
-    if(media700px.matches){
-        if(header.querySelector(".l-header-right-part").firstElementChild.children.length != 4){
-            let menu = header.querySelector(".l-header-right-part").firstElementChild;
-            let searchButton = document.createElement("button")
-            searchButton.className = "button button-medium button-search" 
-            let span = document.createElement("span")
-            span.className = "material-symbols-outlined icon"
-            span.innerHTML = "search"
-            searchButton.appendChild(span)
-            menu.insertBefore(document.createElement("li").appendChild(searchButton), menu.firstElementChild)
-        }
+let media750px = window.matchMedia("(max-width: 750px)")
+media750px.addEventListener("change", () => {
+    let headerRightToolbarMenu = header.querySelector(".l-header-right-part").firstElementChild;
+
+    function createSearchButton() {
+        let outButtonSearch = document.createElement("button")
+        outButtonSearch.className = "button button-medium button-search"
+        let span = document.createElement("span")
+        span.className = "material-symbols-outlined icon"
+        span.innerHTML = "search"
+        outButtonSearch.appendChild(span)
+        let headerRightToolbarMenuItem = document.createElement("li")
+        headerRightToolbarMenuItem.appendChild(outButtonSearch)
+        return headerRightToolbarMenuItem
+    }
+
+    function addSearchbutton() {
+        headerRightToolbarMenu.prepend(createSearchButton(), headerRightToolbarMenu.firstElementChild)
+    }
+
+    if (media750px.matches) {
+        if (headerRightToolbarMenu.querySelector(".button-search") === null)
+            addSearchbutton();
+    } else {
+        headerRightToolbarMenu.querySelector(".button-search").remove()
     }
 })
 
