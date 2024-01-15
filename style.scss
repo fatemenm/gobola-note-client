@@ -434,4 +434,22 @@ input[type="search"] {
   .l-new-note-shortcut > div {
     flex-wrap: nowrap;
   }
+  .l-container {
+    grid-template-columns: fit-content(2%) 1fr 1fr;
+  }
+  nav .button-navbar-text {
+    display: none;
+  }
+  .l-main {
+    padding-top: 1em;
+  }
+  .navbar-menu-item {
+    border-radius: 50px;
+    text-align: center;
+    margin-left: 0.6em;
+    padding: 0.813em;
+  }
+  .navbar-menu {
+    padding-top: 0;
+  }
 }

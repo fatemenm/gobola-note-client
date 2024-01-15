@@ -65,10 +65,12 @@ newNoteWrapper.querySelector("#new-note-shortcut-expanded").querySelector("#butt
 let media750px = window.matchMedia("(max-width: 750px)")
 media750px.addEventListener("change", () => {
     let headerRightToolbarMenu = header.querySelector(".l-header-right-part").firstElementChild;
+    let outButtonSearch
 
     function createSearchButton() {
-        let outButtonSearch = document.createElement("button")
-        outButtonSearch.className = "button button-medium button-search"
+        outButtonSearch = document.createElement("button")
+        outButtonSearch.className = "button button-circle button-large button-search"
+        outButtonSearch.id = "out-button-search"
         let span = document.createElement("span")
         span.className = "material-symbols-outlined icon"
         span.innerHTML = "search"
@@ -83,10 +85,14 @@ media750px.addEventListener("change", () => {
     }
 
     if (media750px.matches) {
-        if (headerRightToolbarMenu.querySelector(".button-search") === null)
-            addSearchbutton();
+        if (headerRightToolbarMenu.querySelector("#out-button-search") === null)
+            addSearchbutton()
+        if (headerRightToolbarMenu.querySelector("#out-button-search") !== null)
+            outButtonSearch.addEventListener("click", () => {
+            })
     } else {
-        headerRightToolbarMenu.querySelector(".button-search").remove()
+        headerRightToolbarMenu.querySelector("li:has(> .button-search)").remove()
+        headerRightToolbarMenu.querySelector("div").remove()
     }
 })
 
