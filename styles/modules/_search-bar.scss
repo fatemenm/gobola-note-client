@@ -1,0 +1,32 @@
+.search-bar {
+  border-radius: 10px;
+  background-color: #f1f3f4;
+  height: 3em;
+  flex-basis: 290px;
+  max-width: 722px;
+  flex-grow: 2;
+  padding: 0.1em 0.8em;
+  gap: 0.6em;
+  .button-close-searchbar {
+    display: none;
+  }
+  .button-search {
+    border-radius: 50px;
+    &:hover {
+      background-color: #e4e6e8;
+      & > .icon {
+        color: #5f6368;
+      }
+    }
+  }
+  &.is-focused {
+    background-color: white;
+    box-shadow: 1px 1px 4px 1px rgb(185, 185, 185);
+    button:hover {
+      background-color: #f1f1f2;
+    }
+    .button-close-searchbar {
+      display: inline-block;
+    }
+  }
+}

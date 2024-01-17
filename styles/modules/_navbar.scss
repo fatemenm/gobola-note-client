@@ -1,0 +1,38 @@
+.l-nav {
+  background-color: white;
+  grid-area: nav;
+  z-index: 1;
+  width: 280px;
+  margin-top: 70px;
+  .navbar-menu {
+    width: 280px;
+    position: fixed;
+    top: 70px;
+  }
+  &.is-close {
+    width: 65px;
+    .button-navbar-text {
+      display: none;
+    }
+    .navbar-menu {
+      width: auto;
+    }
+    .navbar-menu-item {
+      border-radius: 50%;
+      margin-left: 0.8em;
+      padding: 0.7em 0.8em;
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .l-nav {
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    box-shadow: 10px -10px 8px 0 #eee;
+    &.is-close {
+      box-shadow: none;
+    }
+  }
+}
