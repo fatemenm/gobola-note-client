@@ -19,7 +19,6 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
   </head>
-
   <body>
     <div class="l-container">
       <header class="l-header" id="header">
@@ -71,14 +70,19 @@
           </div>
         </div>
         <div class="l-flex l-header-right-part">
-          <!-- tool button menu -->
+          <!-- tools button menu -->
           <menu class="l-flex">
+            <li class="is-hidden">
+              <button class="button button-large button-circle">
+                <span class="material-symbols-outlined icon">search</span>
+              </button>
+            </li>
             <li>
               <button class="button button-large button-circle">
                 <span class="material-symbols-outlined icon"> refresh </span>
               </button>
             </li>
-            <li>
+            <li class="l-grid-view-li">
               <button class="button button-large button-circle">
                 <span class="material-symbols-outlined icon"> grid_view </span>
               </button>
@@ -108,7 +112,6 @@
           </menu>
         </div>
       </header>
-      <!-- <div class="l-nav-placeholder"></div> -->
       <nav class="l-nav" id="navbar">
         <menu class="navbar-menu">
           <li class="navbar-menu-item">

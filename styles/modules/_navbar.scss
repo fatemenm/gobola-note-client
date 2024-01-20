@@ -7,7 +7,7 @@
   .navbar-menu {
     width: 280px;
     position: fixed;
-    top: 70px;
+    top: 65px;
   }
   &.is-close {
     width: 65px;
@@ -25,14 +25,17 @@
   }
 }
 
-@media (max-width: 750px) {
+@media (max-width: 425px) {
   .l-nav {
     position: fixed;
     bottom: 0;
-    top: 0;
+    top: -10px;
     box-shadow: 10px -10px 8px 0 #eee;
     &.is-close {
       box-shadow: none;
     }
+  }
+  .l-grid-view-li {
+    display: none;
   }
 }

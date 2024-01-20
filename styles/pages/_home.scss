@@ -11,7 +11,6 @@
   display: flex;
   flex-direction: column;
   gap: 3em;
-  flex-grow: 2;
   align-items: center;
   padding-top: 2em;
   padding-bottom: 1em;
@@ -20,15 +19,6 @@
     width: 80%;
     max-width: 600px;
   }
-}
-
-.l-header-left-part {
-  flex-grow: 2;
-  gap: 90px;
-}
-
-.l-header-right-part {
-  gap: 24px;
 }
 
 menu {
@@ -40,13 +30,14 @@ menu {
   font-size: 22px;
   font-weight: 400;
 }
-@media (max-width: 1034px) {
-  .l-main > div {
-    width: 90%;
-    max-width: none;
+@media (max-width: 768px) {
+  .l-main {
+    & > div {
+      width: 95%;
+    }
   }
 }
-@media (max-width: 750px) {
+@media (max-width: 425px) {
   .l-new-note-shortcut > div {
     flex-wrap: nowrap;
   }

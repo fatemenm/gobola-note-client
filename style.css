@@ -13,6 +13,12 @@ input[type=search]::-webkit-search-cancel-button {
   -webkit-appearance: none;
 }
 
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -27,6 +33,10 @@ body {
   align-items: center;
 }
 
+.is-hidden {
+  display: none;
+}
+
 .l-nav {
   background-color: white;
   grid-area: nav;
@@ -37,7 +47,7 @@ body {
 .l-nav .navbar-menu {
   width: 280px;
   position: fixed;
-  top: 70px;
+  top: 65px;
 }
 .l-nav.is-close {
   width: 65px;
@@ -54,15 +64,18 @@ body {
   padding: 0.7em 0.8em;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 425px) {
   .l-nav {
     position: fixed;
     bottom: 0;
-    top: 0;
+    top: -10px;
     box-shadow: 10px -10px 8px 0 #eee;
   }
   .l-nav.is-close {
     box-shadow: none;
+  }
+  .l-grid-view-li {
+    display: none;
   }
 }
 .l-header {
@@ -77,6 +90,15 @@ body {
   z-index: 2;
 }
 
+.l-header-left-part {
+  flex-grow: 2;
+  gap: 90px;
+}
+
+.l-header-right-part {
+  gap: 24px;
+}
+
 #header {
   border-bottom: 0.5px solid rgb(212, 212, 212);
   background-color: white;
@@ -85,23 +107,12 @@ body {
   box-shadow: 0 0 6px 3px #bcbcbc;
 }
 
-@media (max-width: 1034px) {
+@media (max-width: 425px) {
+  .l-header {
+    padding: 0.4em;
+  }
   .l-header-right-part {
     gap: 0;
-  }
-  .l-header {
-    gap: 15px;
-  }
-}
-@media (max-width: 750px) {
-  .l-header-left-part {
-    flex-grow: 1;
-  }
-  .l-header-left-part > .search-bar {
-    display: flex;
-  }
-  .l-header {
-    justify-content: space-between;
   }
 }
 .search-bar {
@@ -136,6 +147,9 @@ body {
 .search-bar.is-focused .button-close-searchbar {
   display: inline-block;
 }
+.search-bar.is-hidden {
+  display: none;
+}
 
 .l-container {
   display: grid;
@@ -148,7 +162,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 3em;
-  flex-grow: 2;
   align-items: center;
   padding-top: 2em;
   padding-bottom: 1em;
@@ -157,15 +170,6 @@ body {
 .l-main > div {
   width: 80%;
   max-width: 600px;
-}
-
-.l-header-left-part {
-  flex-grow: 2;
-  gap: 90px;
-}
-
-.l-header-right-part {
-  gap: 24px;
 }
 
 menu {
@@ -178,13 +182,12 @@ menu {
   font-weight: 400;
 }
 
-@media (max-width: 1034px) {
+@media (max-width: 768px) {
   .l-main > div {
-    width: 90%;
-    max-width: none;
+    width: 95%;
   }
 }
-@media (max-width: 750px) {
+@media (max-width: 425px) {
   .l-new-note-shortcut > div {
     flex-wrap: nowrap;
   }
