@@ -37,11 +37,14 @@ menu {
     }
   }
 }
-@media (max-width: 425px) {
+@media (max-width: 600px) {
   .l-new-note-shortcut > div {
     flex-wrap: nowrap;
   }
   .l-container {
     grid-template-columns: 65px 1fr 1fr;
+  }
+  .l-main {
+    margin-top: 50px;
   }
 }

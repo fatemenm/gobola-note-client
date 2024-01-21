@@ -25,17 +25,14 @@
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 600px) {
   .l-nav {
     position: fixed;
     bottom: 0;
-    top: -10px;
-    box-shadow: 10px -10px 8px 0 #eee;
+    top: -12px;
+    box-shadow: 8px -4px 20px 1px rgb(223, 223, 223);
     &.is-close {
       box-shadow: none;
     }
-  }
-  .l-grid-view-li {
-    display: none;
   }
 }

@@ -27,23 +27,20 @@
   }
 }
 
-@media (max-width: 768px) {
-  // .l-header-left-part {
-  //   flex-grow: 1;
-  //   & > .search-bar {
-  //     display: flex;
-  //   }
-  // }
-  // .l-header {
-  //   justify-content: space-between;
-  // }
+@media (max-width: 860px) {
+  .l-header-right-part {
+    gap: 0;
+  }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 600px) {
   .l-header {
     padding: 0.4em;
   }
   .l-header-right-part {
     gap: 0;
+  }
+  .l-grid-view-li {
+    display: none;
   }
 }

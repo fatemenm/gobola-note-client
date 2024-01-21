@@ -50,11 +50,11 @@ newNoteWrapper.querySelector("#new-note-shortcut-expanded").querySelector("#butt
 })
 
 
-let media800px = window.matchMedia("(max-width: 800px)")
-media800px.addEventListener("change", () => {
+let media860px = window.matchMedia("(max-width: 860px)")
+media860px.addEventListener("change", () => {
     let headerRightToolbarMenu = header.querySelector(".l-header-right-part").firstElementChild;
 
-    if (media800px.matches) {
+    if (media860px.matches) {
         let searchBarFirstSpan = searchBar.querySelector("span:nth-child(1)")
         let headerLeftPart = document.querySelector(".l-header-left-part")
         let buttonSearchOutLi = headerRightToolbarMenu.querySelector("li:nth-child(1)")
@@ -107,5 +107,18 @@ media800px.addEventListener("change", () => {
     }
 })
 
+let media425px = window.matchMedia("(max-width: 425px)")
+media425px.addEventListener("change", () => {
+    // header.querySelectorAll("button").classList.remove("button-large")
+    // header.querySelectorAll("button").classList.add("button-small")
+    // console.log(header.querySelectorAll("button"))
+    // let headerButtons = header.querySelectorAll("button")
+    // headerButtons.forEach(button => {
+    //     button.classList.remove("button-large")
+    //     button.classList.remove("button-medium")
+    //     button.classList.add("button-small")
+    // });
+
+})
 
 
