@@ -47,7 +47,6 @@ body {
 .l-nav .navbar-menu {
   width: 280px;
   position: fixed;
-  top: 65px;
 }
 .l-nav.is-close {
   width: 65px;
