@@ -25,12 +25,20 @@ body {
   background-color: #fff;
 }
 
-.l-flex {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+input {
+  border: none;
+  font-family: "Roboto", sans-serif;
+  font-size: 1em;
+  &:focus {
+    outline: none;
+  }
+  &[type="search"] {
+    height: 100%;
+    background-color: transparent;
+    flex-grow: 2;
+  }
 }
 
-.is-hidden {
-  display: none;
+menu {
+  list-style: none;
 }

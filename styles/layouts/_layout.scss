@@ -1,0 +1,23 @@
+@use "./header";
+@use "./main";
+@use "./navbar";
+
+.l-flex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.l-container {
+  display: grid;
+  grid-template-columns: auto 1fr 1fr;
+  grid-template-areas:
+    "header header header"
+    "nav main main";
+}
+
+@media (max-width: 600px) {
+  .l-container {
+    grid-template-columns: 65px 1fr 1fr;
+  }
+}

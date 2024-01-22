@@ -24,6 +24,34 @@
     }
   }
 }
+.navbar-menu {
+  display: flex;
+  flex-direction: column;
+  padding-top: 0.6em;
+}
+.navbar-menu-item:nth-child(1) {
+  background-color: #feefc3;
+}
+
+.navbar-menu-item:hover {
+  background-color: #f1f3f4;
+}
+
+.navbar-menu-item {
+  padding: 0.8em 0 0.8em 1.4em;
+  border-radius: 0 50px 50px 0;
+  .button-navbar-text {
+    font-size: 1.1em;
+  }
+  .icon {
+    color: rgb(81, 81, 81);
+  }
+}
+
+// #navbar.is-hover {
+//   box-shadow: 0.3px 0.4px 9px 2px rgb(217, 217, 217);
+// }
+
 
 @media (max-width: 600px) {
   .l-nav {

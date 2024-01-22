@@ -1,0 +1,115 @@
+// .button {
+//   border: none;
+//   background-color: transparent;
+//   cursor: pointer;
+//   text-align: center;
+//   &.button-icon {
+//     & > .icon{
+
+//     }
+//     border-radius: 50%;
+//     &.button-icon-small {
+//     }
+//     &.button-icon-medium {
+//     }
+//     &.button-icon-large {
+//     }
+//   }
+//   &.button-text {
+//   }
+// }
+
+// @media (max-width: 320px) {
+//   .button {
+//     border: none;
+//     background-color: transparent;
+//     cursor: pointer;
+//     text-align: center;
+//     &.button-icon {
+//       border-radius: 50%;
+//       &.button-icon-small {
+//         & > .icon {
+//           font-size: 24x;
+//           color: red;
+//           font-weight: 300;
+//         }
+//       }
+//       &.button-icon-medium {
+//       }
+//       &.button-icon-large {
+//       }
+//     }
+//     &.button-text {
+//     }
+//   }
+// }
+
+.button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  text-align: center;
+  &.button-large {
+    padding: 0.7em 0.8em;
+  }
+  &.button-medium {
+    padding: 0.45em 0.6em;
+  }
+  &.button-small {
+    padding: 0.3em 0.4em;
+  }
+  &.button-circle {
+    border-radius: 50px;
+    &:hover {
+      background-color: #f1f1f2;
+      & > .icon {
+        color: #5f6368;
+      }
+    }
+
+    &.button-profile {
+      padding: 0.4em 0.5em;
+    }
+  }
+  &.rectangle-button {
+    padding: 0.7em 1.8em;
+    border-radius: 4px;
+    color: #232325;
+    letter-spacing: 0.5px;
+    &:hover {
+      background-color: #f9f9fa;
+    }
+    font-size: 0.9em;
+  }
+  &.button-select-note {
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    & > .icon {
+      color: #111111;
+    }
+  }
+  &.button-navbar {
+    gap: 2.5em;
+  }
+}
+
+.icon {
+  cursor: pointer;
+  color: #797979;
+  &.icon-small {
+    font-size: 1.5em;
+    &.material-symbols-outlined {
+      font-variation-settings: "wght" 400;
+      color: #626262;
+      &.icon-disabled {
+        color: #c6c6c6;
+      }
+    }
+  }
+  &.icon-fill {
+    &.material-symbols-outlined {
+      font-variation-settings: "FILL" 1;
+    }
+  }
+}

@@ -1,100 +1,23 @@
-// navbar component
 @use "styles/base";
-@use "styles/modules/navbar";
-@use "styles/modules/header";
+@use "styles/state";
+@use "styles/layouts/layout";
 @use "styles/modules/search-bar";
-@use "styles/pages/home";
+@use "styles/modules/button";
 
 input {
   border: none;
   font-family: "Roboto", sans-serif;
   font-size: 1em;
-}
-
-input:focus {
-  outline: none;
-}
-
-input[type="search"] {
-  height: 100%;
-  background-color: transparent;
-  flex-grow: 2;
-}
-
-.button {
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-  text-align: center;
-  &.button-large {
-    padding: 0.7em 0.8em;
+  &:focus {
+    outline: none;
   }
-  &.button-medium {
-    padding: 0.45em 0.6em;
-  }
-  &.button-small {
-    padding: 0.3em 0.4em;
-  }
-  &.button-circle {
-    border-radius: 50px;
-    &:hover {
-      background-color: #f1f1f2;
-      & > .icon {
-        color: #5f6368;
-      }
-    }
-
-    &.button-profile {
-      padding: 0.4em 0.5em;
-    }
-  }
-  &.rectangle-button {
-    padding: 0.7em 1.8em;
-    border-radius: 4px;
-    color: #232325;
-    letter-spacing: 0.5px;
-    &:hover {
-      background-color: #f9f9fa;
-    }
-    font-size: 0.9em;
-  }
-  &.button-select-note {
-    position: absolute;
-    top: -8px;
-    left: -8px;
-    & > .icon {
-      color: #111111;
-    }
-  }
-  &.button-navbar {
-    gap: 2.5em;
+  &[type="search"] {
+    height: 100%;
+    background-color: transparent;
+    flex-grow: 2;
   }
 }
 
-.icon {
-  cursor: pointer;
-  color: #797979;
-  &.icon-small {
-    font-size: 1.5em;
-    &.material-symbols-outlined {
-      font-variation-settings: "wght" 400;
-      color: #626262;
-      &.icon-disabled {
-        color: #c6c6c6;
-      }
-    }
-  }
-  &.icon-fill {
-    &.material-symbols-outlined {
-      font-variation-settings: "FILL" 1;
-    }
-  }
-}
-
-.profile-image {
-  border-radius: 50%;
-  object-fit: cover;
-}
 
 .l-new-note-wrapper {
   display: flex;

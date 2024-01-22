@@ -27,6 +27,17 @@
   }
 }
 
+.keep-logo-type {
+  color: rgb(95, 99, 104);
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.profile-image {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 @media (max-width: 860px) {
   .l-header-right-part {
     gap: 0;
