@@ -102,39 +102,6 @@ menu {
     display: none;
   }
 }
-#main {
-  grid-area: main;
-  display: flex;
-  flex-direction: column;
-  gap: 3em;
-  align-items: center;
-  padding-top: 2em;
-  padding-bottom: 1em;
-  margin-top: 72px;
-}
-#main > div {
-  width: 80%;
-  max-width: 600px;
-}
-
-.new-note-wrapper {
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-}
-.new-note-wrapper.is-new-note-input-expanded > .new-note-shortcut {
-  display: none;
-}
-.new-note-wrapper.is-new-note-input-expanded > .new-note {
-  display: flex;
-}
-.new-note-wrapper.is-new-note-input-shrunken > .new-note-shortcut {
-  display: flex;
-}
-.new-note-wrapper.is-new-note-input-shrunken > .new-note {
-  display: none;
-}
-
 .new-note-shortcut {
   background-color: white;
   border-radius: 9px;
@@ -176,15 +143,15 @@ menu {
   border-color: #dfdfdf;
   border: 0.1px solid rgb(204, 204, 204);
 }
-.new-note > .l-note-toolbar {
+.new-note-toolbar {
   margin-top: 0;
   justify-content: space-between;
 }
-.new-note > .l-note-toolbar > .icon-button-bar {
+.new-note-toolbar > .icon-button-bar {
   justify-content: flex-start;
   gap: 1.2em;
 }
-.new-note > .l-note-toolbar > .rectangle-button {
+.new-note-toolbar > .rectangle-button {
   margin-bottom: 0.2em;
 }
 .new-note-body-text {
@@ -199,90 +166,112 @@ menu {
 .new-note > header {
   justify-content: space-between;
 }
-.new-note > header > span {
+.new-note > header > .icon-pin {
   color: #717171;
 }
 
-.l-note-list-container {
+.note {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+  padding: 0.8em 0.8em 0.2em 0.8em;
+  color: rgb(32, 33, 36);
+}
+.note-header {
+  justify-content: space-between;
+}
+.note-header-title {
+  font-weight: 500;
+}
+.note-body {
+  font-size: 0.9em;
+}
+.note-toolbar {
+  justify-content: flex-start;
+  margin-top: 1em;
+  gap: 1.2em;
+}
+
+#main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+  align-items: center;
+  padding-top: 2em;
+  padding-bottom: 1em;
+  margin-top: 72px;
+}
+#main > .new-note-wrapper, #main .note-lists-wrapper {
+  width: 80%;
+  max-width: 600px;
+}
+
+.new-note-wrapper {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.new-note-wrapper.is-new-note-input-expanded > .new-note-shortcut {
+  display: none;
+}
+.new-note-wrapper.is-new-note-input-expanded > .new-note {
+  display: flex;
+}
+.new-note-wrapper.is-new-note-input-shrunken > .new-note-shortcut {
+  display: flex;
+}
+.new-note-wrapper.is-new-note-input-shrunken > .new-note {
+  display: none;
+}
+
+.note-lists-wrapper {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   gap: 4em;
 }
-
-.l-note-list {
+.note-lists-wrapper > .note-lists {
   display: flex;
   flex-direction: column;
   gap: 0.8em;
 }
-
-.note-list-title {
+.note-lists-wrapper > .note-lists > .note-lists-title {
   padding-left: 1.4em;
   color: #5f6368;
   font-size: 0.7em;
   font-weight: 500;
   letter-spacing: 0.07em;
 }
-
-.l-notes {
+.note-lists-wrapper > .note-lists > .note-lists-notes {
   display: flex;
   flex-direction: column;
   gap: 1em;
 }
 
-.l-note-wrapper {
+.note-wrapper {
   position: relative;
   border: 0.1em solid rgb(214, 214, 214);
   border-radius: 8px;
 }
-.l-note-wrapper button,
-.l-note-wrapper .toolbar {
+.note-wrapper button,
+.note-wrapper .toolbar {
   visibility: hidden;
 }
-.l-note-wrapper:hover {
+.note-wrapper:hover {
   box-shadow: 0.1px 0.1px 3px 0.3px rgb(189, 189, 189);
 }
-.l-note-wrapper:hover button,
-.l-note-wrapper:hover .toolbar {
+.note-wrapper:hover button,
+.note-wrapper:hover .toolbar {
   visibility: visible;
 }
 
-.l-note {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2em;
-  padding: 0.8em 0.8em 0.2em 0.8em;
-}
-
-.note {
-  color: rgb(32, 33, 36);
-}
-.note-title {
-  font-weight: 500;
-}
-.note-body {
-  font-size: 0.9em;
-}
-
-.l-note-header {
-  justify-content: space-between;
-}
-
-.l-note-toolbar {
-  justify-content: flex-start;
-  margin-top: 1em;
-  gap: 1.2em;
-}
-
 @media (max-width: 768px) {
-  #main > div {
+  #main > .new-note-wrapper, #main .note-lists-wrapper {
     width: 95%;
   }
 }
 @media (max-width: 600px) {
-  .new-note-shortcut > div {
-    flex-wrap: nowrap;
-  }
   #main {
     margin-top: 50px;
   }

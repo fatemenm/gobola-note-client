@@ -145,7 +145,6 @@
       </menu>
     </nav>
     <main id="main">
-      <!-- FIXME: change l-class to module class -->
       <div class="new-note-wrapper is-new-note-input-shrunken" id="new-note-wrapper">
         <!-- new note shortcut -->
         <div class="l-flex-row new-note-shortcut" id="new-note-shortcut">
@@ -173,7 +172,7 @@
             </button>
           </header>
           <input type="text" placeholder="Take a note..." class="new-note-body-text"/>
-          <div class="l-flex-row l-note-toolbar">
+          <div class="l-flex-row new-note-toolbar">
             <div class="l-flex-row icon-button-bar">
               <button class="button button-circle button-small">
                 <span class="material-symbols-outlined icon icon-small">
@@ -222,20 +221,19 @@
           </div>
         </div>
       </div>
-      <!-- FIXME: change container to wrapper -->
-      <div class="l-note-list-container">
-        <div class="l-note-list">
-          <span class="note-list-title">PINNED</span>
-          <div class="l-notes">
-            <div class="l-note-wrapper">
+      <div class="note-lists-wrapper">
+        <div class="note-lists">
+          <span class="note-lists-title">PINNED</span>
+          <div class="note-lists-notes">
+            <div class="note-wrapper">
               <button class="button button-select-note">
                 <span class="material-symbols-outlined icon icon-fill">
                   check_circle
                 </span>
               </button>
-              <div class="l-note note">
-                <header class="l-flex-row l-note-header">
-                  <span class="note-title">Salad Ingredients</span>
+              <div class="note">
+                <header class="l-flex-row note-header">
+                  <span class="note-header-title">Salad Ingredients</span>
                   <button class="button button-circle button-small">
                     <span class="material-symbols-outlined icon icon-fill icon-pin">
                       push_pin
@@ -245,7 +243,7 @@
                 <div class="note-body">
                   Carrot 80g, Cucumber 90g, Lettuce 100g
                 </div>
-                <div class="l-flex-row l-note-toolbar">
+                <div class="l-flex-row note-toolbar">
                   <button class="button button-circle button-small">
                     <span class="material-symbols-outlined icon icon-small">
                       notification_add
@@ -279,15 +277,15 @@
                 </div>
               </div>
             </div>
-            <div class="l-note-wrapper">
+            <div class="note-wrapper">
               <button class="button button-select-note">
                 <span class="material-symbols-outlined icon icon-fill">
                   check_circle
                 </span>
               </button>
-              <div class="l-note note">
-                <header class="l-flex-row l-note-header">
-                  <span class="note-title">Salad Ingredients</span>
+              <div class="note">
+                <header class="l-flex-row note-header">
+                  <span class="note-header-title">Salad Ingredients</span>
                   <button class="button button-circle button-small">
                     <span class="material-symbols-outlined icon icon-fill icon-pin">
                       push_pin
@@ -297,7 +295,7 @@
                 <div class="note-body">
                   Carrot 80g, Cucumber 90g, Lettuce 100g
                 </div>
-                <div class="l-flex-row l-note-toolbar">
+                <div class="l-flex-row note-toolbar">
                   <button class="button button-circle button-small">
                     <span class="material-symbols-outlined icon icon-small">
                       notification_add
@@ -331,15 +329,15 @@
                 </div>
               </div>
             </div>
-            <div class="l-note-wrapper">
+            <div class="note-wrapper">
               <button class="button button-select-note">
                 <span class="material-symbols-outlined icon icon-fill">
                   check_circle
                 </span>
               </button>
-              <div class="l-note note">
-                <header class="l-flex-row l-note-header">
-                  <span class="note-title">Salad Ingredients</span>
+              <div class="note">
+                <header class="l-flex-row note-header">
+                  <span class="note-header-title">Salad Ingredients</span>
                   <button class="button button-circle button-small">
                     <span class="material-symbols-outlined icon icon-fill icon-pin">
                       push_pin
@@ -349,7 +347,7 @@
                 <div class="note-body">
                   Carrot 80g, Cucumber 90g, Lettuce 100g
                 </div>
-                <div class="l-flex-row l-note-toolbar">
+                <div class="l-flex-row note-toolbar">
                   <button class="button button-circle button-small">
                     <span class="material-symbols-outlined icon icon-small">
                       notification_add
@@ -383,15 +381,15 @@
                 </div>
               </div>
             </div>
-            <div class="l-note-wrapper">
+            <div class="note-wrapper">
               <button class="button button-select-note">
                 <span class="material-symbols-outlined icon icon-fill">
                   check_circle
                 </span>
               </button>
-              <div class="l-note note">
-                <header class="l-flex-row l-note-header">
-                  <span class="note-title">Salad Ingredients</span>
+              <div class="note">
+                <header class="l-flex-row note-header">
+                  <span class="note-header-title">Salad Ingredients</span>
                   <button class="button button-circle button-small">
                     <span class="material-symbols-outlined icon icon-fill icon-pin">
                       push_pin
@@ -401,7 +399,7 @@
                 <div class="note-body">
                   Carrot 80g, Cucumber 90g, Lettuce 100g
                 </div>
-                <div class="l-flex-row l-note-toolbar">
+                <div class="l-flex-row note-toolbar">
                   <button class="button button-circle button-small">
                     <span class="material-symbols-outlined icon icon-small">
                       notification_add
@@ -437,18 +435,18 @@
             </div>
           </div>
         </div>
-        <div class="l-note-list">
-          <span class="note-list-title">OTHERS</span>
-          <div class="l-notes">
-            <div class="l-note-wrapper">
+        <div class="note-lists">
+          <span class="note-lists-title">OTHERS</span>
+          <div class="note-lists-notes">
+            <div class="note-wrapper">
               <button class="button button-select-note">
                 <span class="material-symbols-outlined icon icon-fill">
                   check_circle
                 </span>
               </button>
-              <div class="l-note note">
-                <header class="l-flex-row l-note-header">
-                  <span class="note-title">Salad Ingredients</span>
+              <div class="note">
+                <header class="l-flex-row note-header">
+                  <span class="note-header-title">Salad Ingredients</span>
                   <button class="button button-circle button-small">
                     <span class="material-symbols-outlined icon icon-fill icon-pin">
                       push_pin
@@ -458,7 +456,7 @@
                 <div class="note-body">
                   Carrot 80g, Cucumber 90g, Lettuce 100g
                 </div>
-                <div class="l-flex-row l-note-toolbar">
+                <div class="l-flex-row note-toolbar">
                   <button class="button button-circle button-small">
                     <span class="material-symbols-outlined icon icon-small">
                       notification_add
@@ -492,15 +490,15 @@
                 </div>
               </div>
             </div>
-            <div class="l-note-wrapper">
+            <div class="note-wrapper">
               <button class="button button-select-note">
                 <span class="material-symbols-outlined icon icon-fill">
                   check_circle
                 </span>
               </button>
-              <div class="l-note note">
-                <header class="l-flex-row l-note-header">
-                  <span class="note-title">Salad Ingredients</span>
+              <div class="note">
+                <header class="l-flex-row note-header">
+                  <span class="note-header-title">Salad Ingredients</span>
                   <button class="button button-circle button-small">
                     <span class="material-symbols-outlined icon icon-fill icon-pin">
                       push_pin
@@ -510,7 +508,7 @@
                 <div class="note-body">
                   Carrot 80g, Cucumber 90g, Lettuce 100g
                 </div>
-                <div class="l-flex-row l-note-toolbar">
+                <div class="l-flex-row note-toolbar">
                   <button class="button button-circle button-small">
                     <span class="material-symbols-outlined icon icon-small">
                       notification_add

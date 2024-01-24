@@ -1,0 +1,61 @@
+.new-note-shortcut {
+  background-color: white;
+  border-radius: 9px;
+  box-shadow: 0.05px 0.05px 7px 0.05px rgb(204, 204, 204);
+  border-style: solid;
+  border-color: #dfdfdf;
+  border: 0.1px solid rgb(204, 204, 204);
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1em;
+  box-sizing: border-box;
+  &-toolbar {
+    flex-wrap: nowrap;
+  }
+  &-body-text {
+    height: 100%;
+    border-radius: 8px 0 0 8px;
+    font-weight: 400;
+    flex-grow: 2;
+    &::placeholder {
+      color: #565656;
+    }
+  }
+}
+
+.new-note {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+  padding: 0.3em 1em;
+  box-sizing: border-box;
+  background-color: white;
+  border-radius: 9px;
+  box-shadow: 0.05px 0.05px 7px 0.05px rgb(204, 204, 204);
+  border-style: solid;
+  border-color: #dfdfdf;
+  border: 0.1px solid rgb(204, 204, 204);
+  &-toolbar {
+    margin-top: 0;
+    justify-content: space-between;
+    & > .icon-button-bar {
+      justify-content: flex-start;
+      gap: 1.2em;
+    }
+    & > .rectangle-button {
+      margin-bottom: 0.2em;
+    }
+  }
+  &-body-text {
+    font-size: 0.9em;
+    &::placeholder {
+      color: #565656;
+    }
+  }
+  & > header {
+    justify-content: space-between;
+    & > .icon-pin {
+      color: #717171;
+    }
+  }
+}

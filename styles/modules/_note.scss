@@ -1,0 +1,21 @@
+.note {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+  padding: 0.8em 0.8em 0.2em 0.8em;
+  color: rgb(32, 33, 36);
+  &-header {
+    justify-content: space-between;
+    &-title {
+      font-weight: 500;
+    }
+  }
+  &-body {
+    font-size: 0.9em;
+  }
+  &-toolbar {
+    justify-content: flex-start;
+    margin-top: 1em;
+    gap: 1.2em;
+  }
+}

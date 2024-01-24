@@ -1,3 +1,5 @@
+@use "../modules/new-note";
+@use "../modules/note";
 
 #main {
   grid-area: main;
@@ -8,7 +10,7 @@
   padding-top: 2em;
   padding-bottom: 1em;
   margin-top: 72px;
-  & > div {
+  & > .new-note-wrapper, .note-lists-wrapper  {
     width: 80%;
     max-width: 600px;
   }
@@ -18,114 +20,49 @@
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  &.is-new-note-input-expanded{
-    & > .new-note-shortcut{
+  &.is-new-note-input-expanded {
+    & > .new-note-shortcut {
       display: none;
     }
-    & > .new-note{
+    & > .new-note {
       display: flex;
     }
   }
-  &.is-new-note-input-shrunken{
-    & > .new-note-shortcut{
+  &.is-new-note-input-shrunken {
+    & > .new-note-shortcut {
       display: flex;
     }
-    & > .new-note{
+    & > .new-note {
       display: none;
     }
   }
 }
 
-.new-note-shortcut {
-  background-color: white;
-  border-radius: 9px;
-  box-shadow: 0.05px 0.05px 7px 0.05px rgb(204, 204, 204);
-  border-style: solid;
-  border-color: #dfdfdf;
-  border: 0.1px solid rgb(204, 204, 204);
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 1em;
-  box-sizing: border-box;
-  &-toolbar {
-    flex-wrap: nowrap;
-  }
-  &-body-text{
-    height: 100%;
-    border-radius: 8px 0 0 8px;
-    font-weight: 400;
-    flex-grow: 2;
-    &::placeholder {
-      color: #565656;
-    }
-  }
-}
-
-.new-note{
-  display: flex;
-  flex-direction: column;
-  gap: 1.2em;
-  padding: 0.3em 1em;
-  box-sizing: border-box;
-  background-color: white;
-  border-radius: 9px;
-  box-shadow: 0.05px 0.05px 7px 0.05px rgb(204, 204, 204);
-  border-style: solid;
-  border-color: #dfdfdf;
-  border: 0.1px solid rgb(204, 204, 204);
-  & > .l-note-toolbar {
-    margin-top: 0;
-    justify-content: space-between;
-    & > .icon-button-bar {
-      justify-content: flex-start;
-      gap: 1.2em;
-    }
-    & > .rectangle-button {
-      margin-bottom: 0.2em;
-    }
-  }
-  &-body-text {
-    font-size: 0.9em;
-    &::placeholder {
-      color: #565656;
-    }
-  }
-  & > header {
-    justify-content: space-between;
-    & > span {
-      color: #717171;
-    }
-  }
-}
-
-
-.l-note-list-container {
+.note-lists-wrapper {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   gap: 4em;
+  & > .note-lists {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8em;
+    & > .note-lists-title {
+      padding-left: 1.4em;
+      color: #5f6368;
+      font-size: 0.7em;
+      font-weight: 500;
+      letter-spacing: 0.07em;
+    }
+    & > .note-lists-notes {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+    }
+  }
 }
 
-.l-note-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8em;
-}
-.note-list-title {
-  padding-left: 1.4em;
-  color: #5f6368;
-  font-size: 0.7em;
-  font-weight: 500;
-  letter-spacing: 0.07em;
-}
-
-.l-notes {
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-}
-
-.l-note-wrapper {
+.note-wrapper {
   position: relative;
   border: 0.1em solid rgb(214, 214, 214);
   border-radius: 8px;
@@ -142,46 +79,15 @@
   }
 }
 
-//   FIXME: merge classes l-note and .note
-.l-note {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2em;
-  padding: 0.8em 0.8em 0.2em 0.8em;
-}
-
-.note {
-  color: rgb(32, 33, 36);
-  &-title{
-    font-weight: 500;
-  }
-  &-body{
-    font-size: 0.9em;
-  }
-}
-// FIXME: change layout classes to module ones
-.l-note-header {
-  justify-content: space-between;
-}
-
-.l-note-toolbar {
-  justify-content: flex-start;
-  margin-top: 1em;
-  gap: 1.2em;
-}
-
 @media (max-width: 768px) {
   #main {
-    & > div {
+    & > .new-note-wrapper, .note-lists-wrapper {
       width: 95%;
     }
   }
 }
 
 @media (max-width: 600px) {
-  .new-note-shortcut > div {
-    flex-wrap: nowrap;
-  }
   #main {
     margin-top: 50px;
   }
