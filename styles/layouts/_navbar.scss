@@ -1,4 +1,4 @@
-.l-nav {
+#navbar{
   background-color: white;
   grid-area: nav;
   z-index: 1;
@@ -54,7 +54,7 @@
 
 
 @media (max-width: 600px) {
-  .l-nav {
+  #navbar{
     position: fixed;
     bottom: 0;
     top: -12px;

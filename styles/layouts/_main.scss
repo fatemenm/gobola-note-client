@@ -1,4 +1,5 @@
-.l-main {
+
+#main {
   grid-area: main;
   display: flex;
   flex-direction: column;
@@ -13,166 +14,164 @@
   }
 }
 
-.l-new-note-wrapper {
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    &.is-view {
-      & > .l-new-note-shortcut {
-        display: flex;
-      }
-      & > .l-new-note-shortcut-expanded {
-        display: none;
-      }
+.new-note-wrapper {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  &.is-new-note-input-expanded{
+    & > .new-note-shortcut{
+      display: none;
     }
-    &.is-edit {
-      & > .l-new-note-shortcut {
-        display: none;
-      }
-      & > .l-new-note-shortcut-expanded {
-        display: flex;
-      }
+    & > .new-note{
+      display: flex;
     }
   }
-  
-  .l-new-note-shortcut {
-    background-color: white;
-    border-radius: 9px;
-    box-shadow: 0.05px 0.05px 7px 0.05px rgb(204, 204, 204);
-    border-style: solid;
-    border-color: #dfdfdf;
-    border: 0.1px solid rgb(204, 204, 204);
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 1em;
-    box-sizing: border-box;
-    & > div {
-      flex-wrap: nowrap;
+  &.is-new-note-input-shrunken{
+    & > .new-note-shortcut{
+      display: flex;
+    }
+    & > .new-note{
+      display: none;
     }
   }
-  
-  .l-new-note-shortcut-expanded {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2em;
-    padding: 0.3em 1em;
-    box-sizing: border-box;
-    background-color: white;
-    border-radius: 9px;
-    box-shadow: 0.05px 0.05px 7px 0.05px rgb(204, 204, 204);
-    border-style: solid;
-    border-color: #dfdfdf;
-    border: 0.1px solid rgb(204, 204, 204);
-    & > .l-note-toolbar {
-      margin-top: 0;
-      justify-content: space-between;
-      & > .icon-button-bar {
-        justify-content: flex-start;
-        gap: 1.2em;
-      }
-      & > .rectangle-button {
-        margin-bottom: 0.2em;
-      }
-    }
-    & > input {
-      font-size: 0.9em;
-      &::placeholder {
-        color: #565656;
-      }
-    }
-    & > header {
-      justify-content: space-between;
-      & > span {
-        color: #717171;
-      }
-    }
+}
+
+.new-note-shortcut {
+  background-color: white;
+  border-radius: 9px;
+  box-shadow: 0.05px 0.05px 7px 0.05px rgb(204, 204, 204);
+  border-style: solid;
+  border-color: #dfdfdf;
+  border: 0.1px solid rgb(204, 204, 204);
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1em;
+  box-sizing: border-box;
+  &-toolbar {
+    flex-wrap: nowrap;
   }
-  
-  .new-note-input {
+  &-body-text{
     height: 100%;
     border-radius: 8px 0 0 8px;
     font-weight: 400;
     flex-grow: 2;
+    &::placeholder {
+      color: #565656;
+    }
   }
-  
-  .new-note-input::placeholder {
-    color: #565656;
+}
+
+.new-note{
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+  padding: 0.3em 1em;
+  box-sizing: border-box;
+  background-color: white;
+  border-radius: 9px;
+  box-shadow: 0.05px 0.05px 7px 0.05px rgb(204, 204, 204);
+  border-style: solid;
+  border-color: #dfdfdf;
+  border: 0.1px solid rgb(204, 204, 204);
+  & > .l-note-toolbar {
+    margin-top: 0;
+    justify-content: space-between;
+    & > .icon-button-bar {
+      justify-content: flex-start;
+      gap: 1.2em;
+    }
+    & > .rectangle-button {
+      margin-bottom: 0.2em;
+    }
   }
-  
-  .l-note-list-container {
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    gap: 4em;
+  &-body-text {
+    font-size: 0.9em;
+    &::placeholder {
+      color: #565656;
+    }
   }
-  
-  .l-note-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.8em;
+  & > header {
+    justify-content: space-between;
+    & > span {
+      color: #717171;
+    }
   }
-  .note-list-title {
-    padding-left: 1.4em;
-    color: #5f6368;
-    font-size: 0.7em;
-    font-weight: 500;
-    letter-spacing: 0.07em;
+}
+
+
+.l-note-list-container {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 4em;
+}
+
+.l-note-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+}
+.note-list-title {
+  padding-left: 1.4em;
+  color: #5f6368;
+  font-size: 0.7em;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+}
+
+.l-notes {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.l-note-wrapper {
+  position: relative;
+  border: 0.1em solid rgb(214, 214, 214);
+  border-radius: 8px;
+  button,
+  .toolbar {
+    visibility: hidden;
   }
-  
-  .l-notes {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-  }
-  
-  .l-note-wrapper {
-    position: relative;
-    border: 0.1em solid rgb(214, 214, 214);
-    border-radius: 8px;
+  &:hover {
     button,
     .toolbar {
-      visibility: hidden;
+      visibility: visible;
     }
-    &:hover {
-      button,
-      .toolbar {
-        visibility: visible;
-      }
-      box-shadow: 0.1px 0.1px 3px 0.3px rgb(189, 189, 189);
-    }
+    box-shadow: 0.1px 0.1px 3px 0.3px rgb(189, 189, 189);
   }
-  
-  .l-note {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2em;
-    padding: 0.8em 0.8em 0.2em 0.8em;
-  }
-  
-  .note {
-    color: rgb(32, 33, 36);
-  }
-  
-  .l-note-header {
-    justify-content: space-between;
-  }
-  
-  .note-title {
+}
+
+//   FIXME: merge classes l-note and .note
+.l-note {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+  padding: 0.8em 0.8em 0.2em 0.8em;
+}
+
+.note {
+  color: rgb(32, 33, 36);
+  &-title{
     font-weight: 500;
-    // color: rgb(32, 33, 36);
   }
-  
-  .note-body {
+  &-body{
     font-size: 0.9em;
   }
-  .l-note-toolbar {
-    justify-content: flex-start;
-    margin-top: 1em;
-    gap: 1.2em;
-  }
+}
+// FIXME: change layout classes to module ones
+.l-note-header {
+  justify-content: space-between;
+}
+
+.l-note-toolbar {
+  justify-content: flex-start;
+  margin-top: 1em;
+  gap: 1.2em;
+}
 
 @media (max-width: 768px) {
-  .l-main {
+  #main {
     & > div {
       width: 95%;
     }
@@ -180,10 +179,10 @@
 }
 
 @media (max-width: 600px) {
-  .l-new-note-shortcut > div {
+  .new-note-shortcut > div {
     flex-wrap: nowrap;
   }
-  .l-main {
+  #main {
     margin-top: 50px;
   }
 }
