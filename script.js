@@ -9,13 +9,15 @@ let buttonCloseSearchbar = document.getElementById("button-close-searchbar");
 let newNoteWrapper = document.getElementById("new-note-wrapper");
 let newNoteShortcut = document.getElementById("new-note-shortcut");
 let newNote = document.getElementById("new-note")
+let media860px = window.matchMedia("(max-width: 860px)");
+let media425px = window.matchMedia("(max-width: 425px)");
 
 // toggle navbar
 function toggleNavbar() {
-  if (navbar.classList.contains("is-close")) {
-    navbar.classList.remove("is-close");
+  if (navbar.classList.contains("is-minimized")) {
+    navbar.classList.remove("is-minimized");
   } else {
-    navbar.classList.add("is-close");
+    navbar.classList.add("is-minimized");
   }
 }
 
@@ -49,7 +51,7 @@ newNote.querySelector("#button-close-new-note").addEventListener("click", shrink
 newNote.querySelector(".new-note-body-text").addEventListener("focusout",shrinkNewNoteInput)
 
 
-let media860px = window.matchMedia("(max-width: 860px)");
+
 media860px.addEventListener("change", () => {
   let headerRightToolbarMenu = header.querySelector(
     ".l-header-right-part"
@@ -92,18 +94,17 @@ media860px.addEventListener("change", () => {
     }
     buttonCloseSearchbar.addEventListener("click", closeSearchBar);
 
-    // FIXME: change class name is-close to is-minimized
     //minimize and maximize the navbar
-    if (!navbar.classList.contains("is-close")) {
-      navbar.classList.add("is-close");
+    if (!navbar.classList.contains("is-minimized")) {
+      navbar.classList.add("is-minimized");
     }
     if (!searchBar.classList.contains("is-hidden")) {
       searchBar.classList.add("is-hidden");
     }
   } else {
     // headerRightToolbarMenu.querySelector("li:has(> .button-search)").remove()
-    if (navbar.classList.contains("is-close")) {
-      navbar.classList.remove("is-close");
+    if (navbar.classList.contains("is-minimized")) {
+      navbar.classList.remove("is-minimized");
     }
     if (searchBar.classList.contains("is-hidden")) {
       searchBar.classList.remove("is-hidden");
@@ -111,7 +112,6 @@ media860px.addEventListener("change", () => {
   }
 });
 
-let media425px = window.matchMedia("(max-width: 425px)");
 media425px.addEventListener("change", () => {
   // header.querySelectorAll("button").classList.remove("button-large")
   // header.querySelectorAll("button").classList.add("button-small")
