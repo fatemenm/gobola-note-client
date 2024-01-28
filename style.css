@@ -292,13 +292,15 @@ button {
   position: fixed;
   display: flex;
   flex-direction: column;
-  padding-top: 0.5em;
+  top: 70px;
+  bottom: 0;
+  padding-top: 20px;
 }
 #navbar .navbar-menu-item {
   border-radius: 0 50px 50px 0;
   font-size: 14px;
   font-weight: 500;
-  color: #1F2124;
+  color: #1f2124;
 }
 #navbar .navbar-menu-item:nth-child(1) {
   background-color: #feefc3;
@@ -328,26 +330,39 @@ button {
 #navbar.is-minimized .navbar-menu {
   width: auto;
 }
-#navbar.is-minimized .navbar-menu-item:hover {
-  background-color: transparent;
-}
-#navbar.is-minimized .navbar-menu-item:hover .icon {
-  background-color: #f1f3f4;
-}
 #navbar.is-minimized .navbar-menu-item-link {
   display: block;
 }
 #navbar.is-minimized .navbar-menu-item-link-text {
   display: none;
 }
-#navbar.is-minimized .navbar-menu-item-link > .icon {
+#navbar.is-minimized .navbar-menu-item-link .icon {
   margin-right: 0px;
+}
+#navbar.is-minimized .navbar-menu:hover {
+  width: 280px;
+  box-shadow: 8px -4px 20px 1px rgb(223, 223, 223);
+}
+#navbar.is-minimized .navbar-menu:hover .navbar-menu-item-link {
+  display: flex;
+}
+#navbar.is-minimized .navbar-menu:hover .navbar-menu-item-link-text {
+  display: inline;
+}
+#navbar.is-minimized .navbar-menu:hover .navbar-menu-item-link .icon {
+  margin-right: 24px;
 }
 #navbar.is-minimized .navbar-menu-item:nth-child(1) {
   background-color: transparent;
 }
 #navbar.is-minimized .navbar-menu-item:nth-child(1) .icon {
   background-color: #feefc3;
+}
+#navbar.is-minimized .navbar-menu-item:hover {
+  background-color: transparent;
+}
+#navbar.is-minimized .navbar-menu-item:hover .icon {
+  background-color: #f1f3f4;
 }
 
 @media (max-width: 600px) {

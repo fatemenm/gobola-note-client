@@ -122,4 +122,4 @@ media425px.addEventListener("change", () => {
   //     button.classList.remove("button-medium")
   //     button.classList.add("button-small")
   // });
-});
+})
