@@ -42,6 +42,7 @@ $transitionDuratioon: 250ms;
         }
         &-text {
           position: relative;
+          min-width: max-content;
           left: 60px;
           transition-duration: $transitionDuratioon;
           transition-property: left;

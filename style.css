@@ -321,6 +321,8 @@ button {
 }
 #navbar .navbar-menu-item-link-text {
   position: relative;
+  min-width: -moz-max-content;
+  min-width: max-content;
   left: 60px;
   transition-duration: 250ms;
   transition-property: left;
