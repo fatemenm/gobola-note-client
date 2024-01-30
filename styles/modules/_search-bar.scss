@@ -29,7 +29,10 @@
       display: inline-block;
     }
   }
-  &.is-hidden {
+}
+
+@media (max-width: 795px) {
+  .search-bar{
     display: none;
   }
 }

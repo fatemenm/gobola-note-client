@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=3.0 user-scalable=yes"/>
     <meta name="author" content="Fateme Noori Moghadam" />
     <meta name="description" content="Google Keep" />
     <title>My Google Keep</title>
@@ -22,8 +22,8 @@
   <body>
     <div class="l-container">
       <header id="header">
-        <div class="l-flex-row l-header-left-part">
-          <menu class="l-flex-row">
+        <div class="l-flex-row header-left-menu-wrapper">
+          <menu class="l-flex-row header-left-menu">
             <!-- hamburger menu -->
             <li>
               <button
@@ -37,18 +37,17 @@
             <!-- google keep logo -->
             <li>
               <div class="l-flex-row">
-                <button class="button">
+                <button>
                   <img
+                    class="keep-image"
                     src="images/keep-logo.png"
                     alt="google keep logo"
                     aria-hidden="true"
                     role="presentation"
-                    style="width: 40px; height: 40px"
+                    
                   />
                 </button>
-                <button class="l-flex-row button">
-                  <span class="keep-logo-type">Keep</span>
-                </button>
+                <span class="keep-logo-type">Keep</span>
               </div>
             </li>
           </menu>
@@ -66,10 +65,10 @@
             </button>
           </div>
         </div>
-        <div class="l-flex-row l-header-right-part">
+        <div class="l-flex-row header-right-menu-wrapper">
           <!-- tools button menu -->
-          <menu class="l-flex-row">
-            <li class="is-hidden">
+          <menu class="l-flex-row header-right-menu">
+            <li class="is-hidden header-right-menu-item-search">
               <button class="button-icon button-icon-large">
                 <span class="material-symbols-outlined icon">search</span>
               </button>
@@ -110,9 +109,9 @@
         </div>
       </header>
       <nav id="navbar">
-        <menu class="navbar-menu">
+        <menu class="navbar-menu" id="navbar-menu">
           <li class="navbar-menu-item">
-            <a class="navbar-menu-item-link active">
+            <a class="navbar-menu-item-link is-active">
               <span class="material-symbols-outlined icon"> lightbulb </span>
               <span class="navbar-menu-item-link-text">Notes</span>
             </a>
@@ -162,7 +161,10 @@
         </menu>
       </nav>
       <main id="main">
-        <div class="new-note-wrapper is-new-note-input-shrunken" id="new-note-wrapper">
+        <div
+          class="new-note-wrapper is-new-note-input-shrunken"
+          id="new-note-wrapper"
+        >
           <!-- new note shortcut -->
           <div class="l-flex-row new-note-shortcut" id="new-note-shortcut">
             <input
@@ -231,7 +233,7 @@
                   <span class="material-symbols-outlined icon"> redo </span>
                 </button>
               </div>
-              <button class="button-text" id="button-close-new-note">
+              <button class="button-close-new-note" id="button-close-new-note">
                 Close
               </button>
             </div>

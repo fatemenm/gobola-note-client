@@ -2,6 +2,7 @@ let body = document.getElementsByTagName("body");
 let header = document.getElementById("header");
 let hamburgerMenu = document.getElementById("hamburger-menu");
 let navbar = document.getElementById("navbar");
+let navbarMenu = document.getElementById("navbar-menu")
 let searchInput = document.getElementById("search-input");
 let searchBar = document.getElementById("search-bar");
 let buttonSearch = document.getElementById("button-search");
@@ -10,7 +11,7 @@ let newNoteWrapper = document.getElementById("new-note-wrapper");
 let newNoteShortcut = document.getElementById("new-note-shortcut");
 let newNote = document.getElementById("new-note")
 let media860px = window.matchMedia("(max-width: 860px)");
-let media425px = window.matchMedia("(max-width: 425px)");
+let media600px = window.matchMedia("(max-width: 600px)");
 
 // toggle navbar
 function toggleNavbar() {
@@ -24,6 +25,7 @@ function toggleNavbar() {
 // searchbar
 searchInput.addEventListener("focus", () => {
   searchBar.classList.add("is-focused");
+  buttonCloseSearchbar.classList.remove("is-hidden")
 });
 searchInput.addEventListener("focusout", () => {
   searchBar.classList.remove("is-focused");
@@ -33,6 +35,7 @@ buttonSearch.addEventListener("click", () => {
 });
 buttonCloseSearchbar.addEventListener("click", () => {
   searchBar.classList.remove("is-focused");
+  buttonCloseSearchbar.classList.add("is-hidden")
 });
 
 // expand and shrink new note input
@@ -49,8 +52,6 @@ function expandNewNoteInput() {
 newNoteShortcut.querySelector("input").addEventListener("focus", expandNewNoteInput)
 newNote.querySelector("#button-close-new-note").addEventListener("click", shrinkNewNoteInput)
 newNote.querySelector(".new-note-body-text").addEventListener("focusout",shrinkNewNoteInput)
-
-
 
 media860px.addEventListener("change", () => {
   let headerRightToolbarMenu = header.querySelector(
@@ -111,15 +112,10 @@ media860px.addEventListener("change", () => {
     }
   }
 });
-
-media425px.addEventListener("change", () => {
-  // header.querySelectorAll("button").classList.remove("button-large")
-  // header.querySelectorAll("button").classList.add("button-small")
-  // console.log(header.querySelectorAll("button"))
-  // let headerButtons = header.querySelectorAll("button")
-  // headerButtons.forEach(button => {
-  //     button.classList.remove("button-large")
-  //     button.classList.remove("button-medium")
-  //     button.classList.add("button-small")
-  // });
+media600px.addEventListener("change", () => {
+  if(media600px.matches){
+    if(!(navbar.classList.contains("is-minimized"))){
+      navbar.classList.add("is-minimized")
+    }
+  }
 })

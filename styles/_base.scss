@@ -17,12 +17,17 @@ body {
   overflow-x: hidden;
 }
 
+html{
+  font-size: 10px;
+}
+
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
   background-color: #fff;
+  font-size: 1.6rem
 }
 
 input {
@@ -48,4 +53,14 @@ button{
   background-color: transparent;
   cursor: pointer;
   text-align: center;
+}
+
+// FIXME: 425? or 375?
+@media (max-width: 375px) {
+  html{
+    font-size: 8px
+  }
+  // body {
+  //   font-size: 1.3rem;
+  // }
 }

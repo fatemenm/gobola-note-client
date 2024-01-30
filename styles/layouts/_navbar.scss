@@ -18,6 +18,7 @@ $transitionDuratioon: 250ms;
     flex-direction: column;
     transition-duration: $transitionDuratioon;
     transition-property: width, box-shadow;
+    background-color: white;
     padding-top: 20px;
     width: $fullwidth;
     &-item {
@@ -37,15 +38,15 @@ $transitionDuratioon: 250ms;
         &:hover {
           background-color: #f1f3f4;
         }
-        &.active {
+        &.is-active {
           background-color: #feefc3;
         }
         &-text {
           position: relative;
-          min-width: max-content;
           left: 60px;
           transition-duration: $transitionDuratioon;
           transition-property: left;
+          min-width: max-content;
         }
         .icon {
           position: relative;
@@ -110,4 +111,8 @@ $transitionDuratioon: 250ms;
       box-shadow: none;
     }
   }
+}
+
+@media (max-width: 375px) {
+  
 }
