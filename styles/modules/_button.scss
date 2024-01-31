@@ -34,6 +34,10 @@
     & > .icon{
       font-size: 24px;
     }
+    &.button-google-services:active{
+      background-color: variables.$button-bg-color-active;
+      color: variables.$button-color-active;
+    }
   }
   &-large {
     // 24px
@@ -76,6 +80,12 @@
   font-size: 14px;
   &:hover {
     background-color: variables.$button-bg-color-hover;
+  }
+  // FIXME: style cannot be seen after cllick event handler
+  &:active{
+      background-color: variables.$button-bg-color-active;
+      color: variables.$button-color-active;
+
   }
   &.material-symbols-outlined {
     font-variation-settings: "wght" 500;

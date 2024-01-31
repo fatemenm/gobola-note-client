@@ -46,6 +46,7 @@ searchInput.addEventListener("focusout", () => {
 });
 buttonSearch.addEventListener("click", () => {
   searchBar.classList.add("is-focused");
+  buttonCloseSearchbar.classList.remove("is-hidden")
 });
 buttonCloseSearchbar.addEventListener("click", () => {
   searchBar.classList.remove("is-focused");

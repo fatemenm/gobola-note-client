@@ -544,6 +544,10 @@ button {
 .button-icon-medium > .icon {
   font-size: 24px;
 }
+.button-icon-medium.button-google-services:active {
+  background-color: #E9EAEA;
+  color: #ACADB0;
+}
 .button-icon-large {
   font-size: 2.4rem;
   width: 48px;
@@ -583,6 +587,10 @@ button {
 }
 .button-close-new-note:hover {
   background-color: #f1f1f2;
+}
+.button-close-new-note:active {
+  background-color: #E9EAEA;
+  color: #ACADB0;
 }
 .button-close-new-note.material-symbols-outlined {
   font-variation-settings: "wght" 500;
