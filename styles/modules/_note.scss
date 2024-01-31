@@ -1,9 +1,11 @@
+@use "../variables";
+
 .note {
   display: flex;
   flex-direction: column;
   gap: 1.2em;
   padding: 0.8em 0.8em 0.2em 0.8em;
-  color: rgb(32, 33, 36);
+  color: variables.$primary-color;
   &-header {
     justify-content: space-between;
     &-title {

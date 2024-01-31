@@ -13,6 +13,20 @@ let newNote = document.getElementById("new-note")
 let media860px = window.matchMedia("(max-width: 860px)");
 let media600px = window.matchMedia("(max-width: 600px)");
 
+window.onresize = () => {
+  if (document.documentElement.clientWidth < 376) {
+    document.querySelector("meta[name=viewport]").setAttribute(
+          'content', 
+          'width=device-width, initial-scale=0.6, maximum-scale=2.0, user-scalable=1');
+  }
+}
+
+if (document.documentElement.clientWidth < 376) {
+  document.querySelector("meta[name=viewport]").setAttribute(
+        'content', 
+        'width=device-width, initial-scale=0.6, maximum-scale=2.0, user-scalable=1');
+}
+
 // toggle navbar
 function toggleNavbar() {
   if (navbar.classList.contains("is-minimized")) {
@@ -119,3 +133,10 @@ media600px.addEventListener("change", () => {
     }
   }
 })
+// FIXME: doesn't work after refresh
+if (document.documentElement.clientWidth < media600px) {
+    if(!(navbar.classList.contains("is-minimized"))){
+      navbar.classList.add("is-minimized")
+      console.log("here here here")
+  }
+}

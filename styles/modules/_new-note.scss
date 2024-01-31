@@ -1,10 +1,12 @@
+@use "../variables";
+
 .new-note-shortcut {
   background-color: white;
   border-radius: 9px;
-  box-shadow: 0.05px 0.05px 7px 0.05px rgb(204, 204, 204);
+  box-shadow: 0.05px 0.05px 7px 0.05px variables.$shadow-color;
   border-style: solid;
-  border-color: #dfdfdf;
-  border: 0.1px solid rgb(204, 204, 204);
+  // border-color: #dfdfdf;
+  border: 0.1px solid variables.$border-color;
   justify-content: space-between;
   align-items: center;
   padding: 0 1em;
@@ -18,7 +20,8 @@
     font-weight: 400;
     flex-grow: 2;
     &::placeholder {
-      color: #565656;
+      color: variables.$primary-color;
+      opacity: 0.8;
     }
   }
 }
@@ -31,16 +34,16 @@
   box-sizing: border-box;
   background-color: white;
   border-radius: 9px;
-  box-shadow: 0.05px 0.05px 7px 0.05px rgb(204, 204, 204);
+  box-shadow: 0.05px 0.05px 7px 0.05px variables.$shadow-color;
   border-style: solid;
-  border-color: #dfdfdf;
-  border: 0.1px solid rgb(204, 204, 204);
+  border-color:  variables.$border-color;
+  border: 0.1px solid  variables.$shadow-color;
   &-toolbar {
     margin-top: 0;
     justify-content: space-between;
     & > .icon-button-bar {
       justify-content: flex-start;
-      gap: 1.2em;
+      gap: 0.4em
     }
     & > .rectangle-button {
       margin-bottom: 0.2em;
@@ -49,10 +52,25 @@
   &-body-text {
     font-size: 0.9em;
     &::placeholder {
-      color: #565656;
+      color:  variables.$primary-color;
+      opacity: 0.8;
     }
   }
   & > header {
     justify-content: space-between;
+  }
+}
+
+@media (max-width: 516px) {
+  .new-note{
+    .new-note-toolbar{
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      & > .icon-button-bar{
+        justify-content: space-between;
+        flex-grow: 2;
+        gap: 0;
+      }
+    }
   }
 }

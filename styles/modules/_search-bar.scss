@@ -1,7 +1,9 @@
+@use "../variables";
+
 .search-bar {
   border-radius: 10px;
-  background-color: #f1f3f4;
-  height: 3em;
+  background-color: variables.$light-gray-bg;
+  height: 2.8em;
   flex-basis: 290px;
   max-width: 722px;
   flex-grow: 2;
@@ -13,17 +15,17 @@
   .button-search {
     border-radius: 50px;
     &:hover {
-      background-color: #e4e6e8;
+      background-color: variables.$button-bg-color-hover;
       & > .icon {
-        color: #5f6368;
+        color: variables.$icon-color;
       }
     }
   }
   &.is-focused {
     background-color: white;
-    box-shadow: 1px 1px 4px 1px rgb(185, 185, 185);
+    box-shadow: 1px 1px 4px 1px variables.$shadow-color;
     button:hover {
-      background-color: #f1f1f2;
+      background-color: variables.$button-bg-color-hover;
     }
     .button-close-searchbar {
       display: inline-block;

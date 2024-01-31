@@ -1,6 +1,5 @@
 @use "../variables";
 
-// TODO: set colors for buttons
 .button-icon {
   border-radius: 50%;
   &:not(.is-disabled):hover {
@@ -18,36 +17,33 @@
     height: 32px;
     & > .icon {
       font-size: 18px;
-      color: variables.$icon-color-small;
+      color: variables.$icon-color;
       &.material-symbols-outlined {
         font-variation-settings: "wght" 500;
       }
     }
     & > .icon-pin {
       font-size: 24px;
-      color: variables.$icon-color-small;
-      // &.material-symbols-outlined {
-      //   font-variation-settings: "FILL" 1;
-      // }
+      color: variables.$icon-color;
     }
   }
   &-medium {
     font-size: 1.6rem;
-    width: 2.5em;
-    height: 2.5em;
+    width: 40px;
+    height: 40px;
     & > .icon{
-      font-size:1.5em;
+      font-size: 24px;
     }
   }
   &-large {
     // 24px
     font-size: 2.4rem; 
     // 42.2px
-    width: 1.8em;
-    height: 1.8em;
+    width: 48px;
+    height: 48px;
     // 24px
     & > .icon{
-      font-size: 1em
+      font-size: 24px
     }
   }
   &.is-disabled {
@@ -64,7 +60,7 @@
     top: -8px;
     left: -8px;
     & > .icon {
-      color: variables.$text-button-color;
+      color: variables.$primary-color;
       &.material-symbols-outlined {
         font-variation-settings: "FILL" 1;
       }
@@ -75,30 +71,13 @@
   width: 90px;
   height: 36px;
   border-radius: 4px;
-  color: variables.$text-button-color;
+  color: variables.$primary-color;
   letter-spacing: 0.5px;
   font-size: 14px;
   &:hover {
-    background-color: #f9f9fa;
+    background-color: variables.$button-bg-color-hover;
   }
   &.material-symbols-outlined {
     font-variation-settings: "wght" 500;
   }
 }
-
-// @media (max-width: 375px) {
-//   .button-icon-large{
-//     width: 32px;
-//     height: 32px;
-//     & > .icon {
-//       font-size: 1.25em
-//     }
-//   }
-//   .button-icon-medium{
-//     width: 32px;
-//     height: 32px;
-//     & > .icon{
-//       font-size: 20px;
-//     }
-//   }
-// }

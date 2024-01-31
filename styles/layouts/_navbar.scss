@@ -13,16 +13,17 @@ $transitionDuratioon: 250ms;
   .navbar-menu {
     display: flex;
     position: fixed;
-    top: 70px;
+    top: 50px;
     bottom: 0;
     flex-direction: column;
     transition-duration: $transitionDuratioon;
     transition-property: width, box-shadow;
     background-color: white;
-    padding-top: 20px;
+    // NOTE: this is for hover navbar-menu in minimized version
+    padding-top: 25px;
     width: $fullwidth;
     &-item {
-      color: variables.$text-primary-color;
+      color: variables.$primary-color;
       font-weight: 500;
       font-size: 14px;
       &-link {
@@ -36,10 +37,10 @@ $transitionDuratioon: 250ms;
         width: $fullwidth;
         height: 48px;
         &:hover {
-          background-color: #f1f3f4;
+          background-color: variables.$light-gray-bg;
         }
         &.is-active {
-          background-color: #feefc3;
+          background-color:variables.$light-orange;
         }
         &-text {
           position: relative;
@@ -54,7 +55,7 @@ $transitionDuratioon: 250ms;
           transition-duration: $transitionDuratioon;
           transition-property: left;
           border-radius: 50%;
-          color: variables.$icon-color-navbar;
+          color: variables.$icon-color;
           font-size: 24px;
         }
       }
@@ -81,7 +82,7 @@ $transitionDuratioon: 250ms;
     }
     &:hover {
       transition-delay: $transitionDelay;
-      box-shadow: 8px -4px 20px 1px rgb(223, 223, 223);
+      box-shadow: 8px -4px 20px 1px variables.$shadow-color;
       width: $fullwidth;
       .navbar-menu-item-link {
         left: 0;
@@ -103,10 +104,13 @@ $transitionDuratioon: 250ms;
 
 @media (max-width: 600px) {
   #navbar {
-    position: fixed;
-    top: -12px;
+    // position: fixed;
+    // top: -12px;
     bottom: 0;
-    box-shadow: 8px -4px 20px 1px rgb(223, 223, 223);
+    box-shadow: 8px -4px 20px 1px variables.$shadow-color;
+    .navbar-menu{
+      top: 40px;
+    }
     &.is-minimized {
       box-shadow: none;
     }

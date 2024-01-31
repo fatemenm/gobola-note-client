@@ -1,4 +1,4 @@
-
+@use "../variables";
 
 #header {
   display: flex;
@@ -8,31 +8,32 @@
   gap: 2.813em;
   z-index: 2;
   box-sizing: border-box;
-  padding: 0.6em 0.8em;
+  padding: 0.6em 10px;
   width: 100%;
+  height: 64px;
 }
 
 .header-left-menu-wrapper {
   flex-grow: 2;
   gap: 9.625rem;
-  & > .header-left-menu{
+  & > .header-left-menu {
     gap: 0.4rem;
   }
 }
 
-.header-right-menu-wrapper{
+.header-right-menu-wrapper {
   gap: 4rem;
 }
 
-.header-right-menu-item-search{
+.header-right-menu-item-search {
   display: none;
 }
 
 #header {
-  border-bottom: 0.5px solid rgb(212, 212, 212);
+  border-bottom: 0.5px solid variables.$border-color;
   background-color: white;
   &.has-shadow {
-    box-shadow: 0 0 6px 3px #bcbcbc;
+    box-shadow: 0 0 6px 3px variables.$shadow-color;
   }
 }
 
@@ -42,34 +43,35 @@
   font-size: 1.375em;
 }
 
-.keep-image{
+.keep-image {
   width: 4rem;
   height: 4rem;
-} 
+}
 
 .profile-image {
+  margin-top: 0.2rem;
   border-radius: 50%;
-  object-fit: cover;
   width: 3rem;
   height: 3rem;
-  margin-top: 0.2rem;
+  object-fit: cover;
 }
 // NOTE: to replace search-bar with search-button
 @media (max-width: 795px) {
-  .header-right-menu-wrapper{
+  .header-right-menu-wrapper {
     gap: 0;
   }
-  .header-right-menu-item-search{
+  .header-right-menu-item-search {
     display: block;
-  }  
+  }
 }
 
 // NOTE: to remove grid-view icon
 @media (max-width: 600px) {
-  #header{
-    padding: 0.4em;
+  #header {
+    // padding: 0.4em;
+    height: 56px;
   }
-  .header-right-menu-wrapper{
+  .header-right-menu-wrapper {
     gap: 0;
   }
   .l-grid-view-li {
@@ -78,22 +80,21 @@
 }
 
 @media (max-width: 425px) {
-.header-left-menu-wrapper{
-  max-width: fit-content;
-  & > .header-left-menu{
+  .header-left-menu-wrapper {
+    max-width: fit-content;
+    & > .header-left-menu {
+      gap: 0;
+    }
+  }
+  .keep-image {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+  .keep-logo-type {
+    font-size: 1.2em;
+  }
+  #header {
+    justify-content: space-between;
     gap: 0;
   }
 }
-.keep-image{
-  width: 3.5rem;
-  height: 3.5rem;
-} 
-.keep-logo-type {
-  font-size: 1.2em;
-}
-#header{
-  justify-content: space-between;
-}
-    
-}
-
