@@ -311,7 +311,7 @@ button {
   font-weight: 500;
   letter-spacing: 0.07em;
 }
-.note-lists-wrapper > .note-lists > .note-lists-notes {
+.note-lists-wrapper > .note-lists > .note-list {
   display: flex;
   flex-direction: column;
   gap: 1em;

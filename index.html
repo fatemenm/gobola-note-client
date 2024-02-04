@@ -161,6 +161,7 @@
         </menu>
       </nav>
       <main id="main">
+        <!-- new-note-wrapper  -->
         <div
           class="new-note-wrapper is-new-note-input-shrunken"
           id="new-note-wrapper"
@@ -187,7 +188,7 @@
           <!-- new note -->
           <div class="new-note" id="new-note">
             <header class="l-flex-row">
-              <input type="text" placeholder="Title" id="new-note-header-input"/>
+              <input type="text" placeholder="Title" id="new-note-title"/>
 
               <button class="button-icon button-icon-small">
                 <span class="material-symbols-outlined icon icon-pin">
@@ -199,7 +200,7 @@
               type="text"
               placeholder="Take a note..."
               class="new-note-body-text"
-              id="new-note-body-text"
+              id="new-note-body"
             />
             <div class="l-flex-row new-note-toolbar">
               <div class="l-flex-row icon-button-bar">
@@ -240,10 +241,11 @@
             </div>
           </div>
         </div>
+        <!-- note-lists-wrapper -->
         <div class="note-lists-wrapper">
           <div class="note-lists">
             <span class="note-lists-title">PINNED</span>
-            <div class="note-lists-notes">
+            <div class="note-list" id="note-list-pinned">
               <div class="note-wrapper">
                 <button class="button-icon button-select-note">
                   <span class="material-symbols-outlined icon">
@@ -353,7 +355,7 @@
           <!-- TODO: pin icon is different here and in pinned note lists -->
           <div class="note-lists">
             <span class="note-lists-title">OTHERS</span>
-            <div class="note-lists-notes">
+            <div class="note-list" id="note-list-others">
               <div class="note-wrapper">
                 <button class="button-icon button-select-note">
                   <span class="material-symbols-outlined icon">
