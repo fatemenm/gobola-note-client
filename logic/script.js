@@ -9,23 +9,39 @@ let buttonSearch = document.getElementById("button-search");
 let buttonCloseSearchbar = document.getElementById("button-close-searchbar");
 let newNoteWrapper = document.getElementById("new-note-wrapper");
 let newNoteShortcut = document.getElementById("new-note-shortcut");
-let newNote = document.getElementById("new-note")
+let newNote = document.getElementById("new-note");
+const newNoteHeaderInput = document.getElementById("new-note-header-input");
+const newNoteBodyText = document.getElementById("new-note-body-text")
+const buttonCloseNewNote = document.getElementById("button-close-new-note");
 let media860px = window.matchMedia("(max-width: 860px)");
 let media600px = window.matchMedia("(max-width: 600px)");
 
-window.onresize = () => {
-  if (document.documentElement.clientWidth < 376) {
-    document.querySelector("meta[name=viewport]").setAttribute(
-          'content', 
-          'width=device-width, initial-scale=0.6, maximum-scale=2.0, user-scalable=1');
-  }
+let notes = []
+
+function clearNewNoteInputs(){
+  newNoteHeaderInput.value = ""
+  newNoteBodyText.value = ""
 }
 
-if (document.documentElement.clientWidth < 376) {
-  document.querySelector("meta[name=viewport]").setAttribute(
-        'content', 
-        'width=device-width, initial-scale=0.6, maximum-scale=2.0, user-scalable=1');
+function createNote(){
+  if(localStorage.getItem("notes") !== null){
+    notes = JSON.parse(localStorage.notes)
+  }
+  notes.push({
+    title: newNoteHeaderInput.value,
+    body: newNoteBodyText.value,
+    date: Date.now(),
+    isPinned: false,
+    isArchived: false,
+    isTrashed: false
+  })
+  clearNewNoteInputs()
+  console.log(notes)
+  localStorage.notes = JSON.stringify(notes)
+  console.log(localStorage.notes)
 }
+
+buttonCloseNewNote.addEventListener("click", createNote)
 
 // toggle navbar
 function toggleNavbar() {
@@ -62,14 +78,15 @@ function shrinkNewNoteInput() {
 function expandNewNoteInput() {
   newNoteWrapper.classList.remove("is-new-note-input-shrunken")
   newNoteWrapper.classList.add("is-new-note-input-expanded")
-  newNote.querySelector(".new-note-body-text").focus()
+  // newNoteBodyText.focus()
 }
 newNoteShortcut.querySelector("input").addEventListener("focus", expandNewNoteInput)
-newNote.querySelector("#button-close-new-note").addEventListener("click", shrinkNewNoteInput)
-newNote.querySelector(".new-note-body-text").addEventListener("focusout",shrinkNewNoteInput)
+buttonCloseNewNote.addEventListener("click", shrinkNewNoteInput)
+// newNoteBodyText.addEventListener("focusout",shrinkNewNoteInput)
 
+// media queries
 media860px.addEventListener("change", () => {
-  let headerRightToolbarMenu = header.querySelector(
+  let headerRightToolbarMenu = header.querySelector( 
     ".l-header-right-part"
   ).firstElementChild;
 
@@ -140,4 +157,17 @@ if (document.documentElement.clientWidth < media600px) {
       navbar.classList.add("is-minimized")
       console.log("here here here")
   }
+}
+
+window.onresize = () => {
+  if (document.documentElement.clientWidth < 376) {
+    document.querySelector("meta[name=viewport]").setAttribute(
+          'content', 
+          'width=device-width, initial-scale=0.6, maximum-scale=2.0, user-scalable=1');
+  }
+}
+if (document.documentElement.clientWidth < 376) {
+  document.querySelector("meta[name=viewport]").setAttribute(
+        'content', 
+        'width=device-width, initial-scale=0.6, maximum-scale=2.0, user-scalable=1');
 }
