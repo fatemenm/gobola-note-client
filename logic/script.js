@@ -1,109 +1,19 @@
-let body = document.getElementsByTagName("body");
+import {createNote} from "./note.js"
+
+// let body = document.getElementsByTagName("body");
 let header = document.getElementById("header");
-let hamburgerMenu = document.getElementById("hamburger-menu");
+// let hamburgerMenu = document.getElementById("hamburger-menu");
 let navbar = document.getElementById("navbar");
-let navbarMenu = document.getElementById("navbar-menu");
+// let navbarMenu = document.getElementById("navbar-menu");
 let searchInput = document.getElementById("search-input");
 let searchBar = document.getElementById("search-bar");
 let buttonSearch = document.getElementById("button-search");
 let buttonCloseSearchbar = document.getElementById("button-close-searchbar");
 let newNoteWrapper = document.getElementById("new-note-wrapper");
 let newNoteShortcut = document.getElementById("new-note-shortcut");
-let newNote = document.getElementById("new-note");
-const newNoteTitle = document.getElementById("new-note-title");
-const newNoteBody = document.getElementById("new-note-body");
 const buttonCloseNewNote = document.getElementById("button-close-new-note");
-const noteListPinned = document.getElementById("note-list-pinned");
-const noteListOthers = document.getElementById("note-list-others");
 let media860px = window.matchMedia("(max-width: 860px)");
 let media600px = window.matchMedia("(max-width: 600px)");
-
-// TODO: esm 
-let notes = [];
-
-function clearNewNoteInputs() {
-  newNoteTitle.value = "";
-  newNoteBody.value = "";
-}
-
-function showNote(title, body) {
-  let newNote = document.createElement("div");
-  newNote.classList.add("note-wrapper");
-  newNote.innerHTML = `<button class="button-icon button-select-note">
-    <span class="material-symbols-outlined icon">
-      check_circle
-    </span>
-  </button>
-  <div class="note">
-    <header class="l-flex-row note-header">
-      <span class="note-header-title" id="note-title">${title}</span>
-      <button class="button-icon button-icon-small">
-        <span class="material-symbols-outlined icon icon-pin">
-          push_pin
-        </span>
-      </button>
-    </header>
-    <div class="note-body" id="note-body">
-      ${body}
-    </div>
-    <div class="l-flex-row note-toolbar">
-      <button class="button-icon button-icon-small">
-        <span class="material-symbols-outlined icon">
-          notification_add
-        </span>
-      </button>
-      <button class="button-icon button-icon-small">
-        <span class="material-symbols-outlined icon">
-          person_add
-        </span>
-      </button>
-      <button class="button-icon button-icon-small">
-        <span class="material-symbols-outlined icon">
-          palette
-        </span>
-      </button>
-      <button class="button-icon button-icon-small">
-        <span class="material-symbols-outlined icon">
-          image
-        </span>
-      </button>
-      <button class="button-icon button-icon-small">
-        <span class="material-symbols-outlined icon">
-          archive
-        </span>
-      </button>
-      <button class="button-icon button-icon-small">
-        <span class="material-symbols-outlined icon">
-          more_vert
-        </span>
-      </button>
-    </div>
-  </div>`;
-  console.log(newNote);
-  noteListOthers.insertBefore(newNote, noteListOthers.firstChild);
-}
-
-function createNote() {
-  // FIXME: it will cuase problem. check what is the real type of not having notes in localSt
-  if (localStorage.getItem("notes") !== null) {
-    notes = JSON.parse(localStorage.notes);
-  }
-  if (newNoteTitle.value.trim() !== "" || newNoteBody.value.trim() !== "") {
-    notes.push({
-      title: newNoteTitle.value,
-      body: newNoteBody.value,
-      date: Date.now(),
-      isPinned: false,
-      isArchived: false,
-      isTrashed: false,
-    });
-  }
-  showNote(newNoteTitle.value, newNoteBody.value);
-  console.log(notes);
-  localStorage.notes = JSON.stringify(notes);
-  console.log(localStorage.notes);
-  clearNewNoteInputs();
-}
 
 buttonCloseNewNote.addEventListener("click", createNote);
 

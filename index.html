@@ -189,8 +189,7 @@
           <div class="new-note" id="new-note">
             <header class="l-flex-row">
               <input type="text" placeholder="Title" id="new-note-title"/>
-
-              <button class="button-icon button-icon-small">
+              <button class="button-icon button-icon-small" id="new-note-pin-button">
                 <span class="material-symbols-outlined icon icon-pin">
                   push_pin
                 </span>
@@ -352,7 +351,6 @@
               </div>
             </div>
           </div>
-          <!-- TODO: pin icon is different here and in pinned note lists -->
           <div class="note-lists">
             <span class="note-lists-title">OTHERS</span>
             <div class="note-list" id="note-list-others">
@@ -465,6 +463,6 @@
         </div>
       </main>
     </div>
-    <script src="/logic/script.js"></script>
+    <script type="module" src="/logic/script.js"></script>
   </body>
 </html>
