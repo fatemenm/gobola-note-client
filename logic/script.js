@@ -1,4 +1,4 @@
-import {createNote} from "./note.js"
+import "./components/new-note.js"
 
 // let body = document.getElementsByTagName("body");
 let header = document.getElementById("header");
@@ -15,7 +15,6 @@ const buttonCloseNewNote = document.getElementById("button-close-new-note");
 let media860px = window.matchMedia("(max-width: 860px)");
 let media600px = window.matchMedia("(max-width: 600px)");
 
-buttonCloseNewNote.addEventListener("click", createNote);
 
 // toggle navbar
 function toggleNavbar() {

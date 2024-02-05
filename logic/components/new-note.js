@@ -1,8 +1,12 @@
 const newNoteTitle = document.getElementById("new-note-title");
 const newNoteBody = document.getElementById("new-note-body");
 const newNotePinButton = document.getElementById("new-note-pin-button");
+const notePinButton = document.getElementById("note-pin-button");
 const noteListPinned = document.getElementById("note-list-pinned");
 const noteListOthers = document.getElementById("note-list-others");
+const buttonCloseNewNote = document.getElementById("button-close-new-note");
+
+buttonCloseNewNote.addEventListener("click", createNote);
 
 let notes = [];
 
@@ -32,7 +36,7 @@ function showNote() {
   <div class="note">
     <header class="l-flex-row note-header">
       <span class="note-header-title" id="note-title">${newNoteTitle.value}</span>
-      <button class="button-icon button-icon-small">
+      <button class="button-icon button-icon-small" id="note-pin-button">
         <span class="material-symbols-outlined icon icon-pin">
           push_pin
         </span>
@@ -102,11 +106,12 @@ function initializeNote() {
   }
 }
 
-// function pinNote(){
-//     newNotePinButton.addEventListener()
-// }
+function pinNote(){
+  newNotePinButton.addEventListener("click", newNotePinButton)
+  notePinButton.addEventListener("click", notePinButton)
+}
 
-export function createNote() {
+ export function createNote() {
   let note = initializeNote();
   getNotes();
   notes.push(note);
