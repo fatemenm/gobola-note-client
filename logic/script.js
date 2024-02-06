@@ -1,4 +1,5 @@
-import "./components/new-note.js"
+import "./component/new-note.js"
+import "./component/note-list.js"
 
 // let body = document.getElementsByTagName("body");
 let header = document.getElementById("header");
