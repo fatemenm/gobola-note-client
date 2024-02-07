@@ -11,12 +11,20 @@ export function init(initNotes) {
   for (const note of initNotes) {
     notes[note.id] = note
   }
-  console.log("all notes in init function state: " + notes)
+}
+
+/**
+ *
+ * @param {Note[]} initNotes
+ * @param {Note[]} notes
+ */
+export function startApp(initNotes){
+  init(initNotes)
+  eventTarget.dispatchEvent(createEvent("appStarted", {notes}))
 }
 
 export function addNote(note) {
   notes[note.id] = note
-
   eventTarget.dispatchEvent(createEvent("noteAdded", {note}))
 }
 
