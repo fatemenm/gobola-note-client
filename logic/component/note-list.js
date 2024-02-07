@@ -1,6 +1,6 @@
-import * as NoteService from "../service/note.js"
+import * as StateManager from "../state.js"
 
-NoteService.on(NoteService.EVENT_NOTE_CREATED, noteCreatedHandler)
+StateManager.on("noteAdded", noteAddedHandler)
 
 export function createNote() {
   const newNote = document.createElement("div")
@@ -61,6 +61,11 @@ function addNote(note) {
   console.log(note)
 }
 
-export function noteCreatedHandler(event) {
-  // addNote(event.payload.note)
+/**
+ *
+ * @param {Event} event
+ */
+export function noteAddedHandler(event) {
+  console.log(event)
+  addNote(event.payload.note)
 }

@@ -1,4 +1,4 @@
-import * as NoteService from "../service/note.js"
+import * as StateManager from "../state.js"
 import {Note} from "../entity/note.js"
 
 const titleInput = document.getElementById("new-note-title")
@@ -41,6 +41,6 @@ function createNote() {
     return
   }
   const note = new Note(form.title, form.body)
-  NoteService.createNote(note)
+  StateManager.addNote(note)
   resetForm()
 }

@@ -1,5 +1,9 @@
+import * as StateManager from  "./state.js"
+import * as Storage from "./repository/storage.js"
 import "./component/new-note.js"
 import "./component/note-list.js"
+
+StateManager.init(Storage.getNotes())
 
 // let body = document.getElementsByTagName("body");
 let header = document.getElementById("header");
