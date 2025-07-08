@@ -133,6 +133,14 @@ media600px.addEventListener("change", () => {
   }
 })
 
+window.onload = function () {
+  if (window.innerWidth >= 600) {
+    if (navbar) {
+      navbar.classList.remove("is-minimized")
+    }
+  }
+}
+
 window.onresize = () => {
   if (document.documentElement.clientWidth < 376) {
     document
