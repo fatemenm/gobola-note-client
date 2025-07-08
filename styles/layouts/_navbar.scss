@@ -40,7 +40,7 @@ $transitionDuratioon: 250ms;
           background-color: variables.$light-gray-bg;
         }
         &.is-active {
-          background-color:variables.$light-orange;
+          background-color: variables.$light-orange;
         }
         &-text {
           position: relative;
@@ -108,9 +108,9 @@ $transitionDuratioon: 250ms;
     // top: -12px;
     bottom: 0;
     box-shadow: 8px -4px 20px 1px variables.$shadow-color;
-    .navbar-menu{
-      top: 40px;
-    }
+    // .navbar-menu{
+    //   top: 40px;
+    // }
     &.is-minimized {
       box-shadow: none;
     }
@@ -118,5 +118,4 @@ $transitionDuratioon: 250ms;
 }
 
 @media (max-width: 375px) {
-  
 }
