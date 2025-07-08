@@ -132,13 +132,6 @@ media600px.addEventListener("change", () => {
     }
   }
 })
-// FIXME: doesn't work after refresh
-if (document.documentElement.clientWidth < media600px) {
-  if (!navbar.classList.contains("is-minimized")) {
-    navbar.classList.add("is-minimized")
-    console.log("here here here")
-  }
-}
 
 window.onresize = () => {
   if (document.documentElement.clientWidth < 376) {
