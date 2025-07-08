@@ -1,20 +1,18 @@
 import * as StateManager from "../state.js"
-import {Note} from "../entity/note.js"
+import { Note } from "../entity/note.js"
 
 const titleInput = document.getElementById("new-note-title")
 const bodyInput = document.getElementById("new-note-body")
 const closeBtn = document.getElementById("button-close-new-note")
-// const newNotePinButton = document.getElementById("new-note-pin-button")
-// const noteListOthers = document.getElementById("note-list-others")
-// const noteListPinned = document.getElementById("note-list-pinned")
 
 closeBtn.addEventListener("click", createNote)
-
 
 function validateForm(form) {
   const errors = []
   if (form.title.trim() === "" && form.body.trim() === "") {
-    errors.push(new Error("note title and body can not be empty at the same time."))
+    errors.push(
+      new Error("note title and body can not be empty at the same time.")
+    )
   }
   return errors
 }

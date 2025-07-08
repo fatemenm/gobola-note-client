@@ -18,8 +18,7 @@ function addNote(note) {
   noteList.insertBefore(createNote(note), noteList.firstChild)
 }
 
-
-function createNote({title, body}){
+function createNote({ title, body }) {
   const noteElement = document.createElement("div")
   noteElement.classList.add("note-wrapper")
   noteElement.innerHTML = `<button class="button-icon button-select-note">
@@ -74,7 +73,7 @@ function createNote({title, body}){
   return noteElement
 }
 
-function initList(notes){
+function initList(notes) {
   Object.values(notes).forEach(addNote)
 }
 
@@ -86,6 +85,6 @@ export function noteAddedHandler(event) {
   addNote(event.payload.note)
 }
 
-export function appStartedHandler(event){
+export function appStartedHandler(event) {
   initList(event.payload.notes)
 }

@@ -18,14 +18,14 @@ export function init(initNotes) {
  * @param {Note[]} initNotes
  * @param {Note[]} notes
  */
-export function startApp(initNotes){
+export function startApp(initNotes) {
   init(initNotes)
-  eventTarget.dispatchEvent(createEvent("appStarted", {notes}))
+  eventTarget.dispatchEvent(createEvent("appStarted", { notes }))
 }
 
 export function addNote(note) {
   notes[note.id] = note
-  eventTarget.dispatchEvent(createEvent("noteAdded", {note}))
+  eventTarget.dispatchEvent(createEvent("noteAdded", { note }))
 }
 
 function createEvent(eventType, payload) {
